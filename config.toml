@@ -1,0 +1,113 @@
+baseURL = "http://macmini/"
+languageCode = "zh-cn"
+title = "Web3 Station"
+theme = "showcase"
+defaultContentLanguage = "zh"
+
+enableRobotsTXT = true
+
+
+googleAnalytics = "G-XXXXXXX"
+hasCJKLanguage = true
+summaryLength = 80
+
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+
+# [作者信息，可选]
+[author]
+  name = "Web3 Station Team"
+
+# ✅ 菜单栏导航（包括首页）
+[menu]
+
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 0
+
+  [[menu.main]]
+    name = "空投聚合"
+    url = "/airdrops/"
+    weight = 1
+
+  [[menu.main]]
+    name = "钱包追踪"
+    url = "/wallets/"
+    weight = 2
+
+  [[menu.main]]
+    name = "项目解析"
+    url = "/projects/"
+    weight = 3
+
+  [[menu.main]]
+    name = "数据榜单"
+    url = "/rankings/"
+    weight = 4
+
+  [[menu.main]]
+    name = "技术周报"
+    url = "/weekly/"
+    weight = 5
+
+  [[menu.main]]
+    name = "学习教程"
+    url = "/tutorials/"
+    weight = 6
+
+  [[menu.main]]
+    name = "工具导航"
+    url = "/tools/"
+    weight = 7
+
+  [[menu.main]]
+    name = "招聘信息"
+    url = "/jobs/"
+    weight = 8
+
+  [[menu.main]]
+    name = "订阅入口"
+    url = "/subscribe/"
+    weight = 9
+
+# ✅ 首页信息设置（PaperMod 特有）
+[params.homeInfoParams]
+Title = "Web3 Station"
+Content = """
+Web3 Station 是一个聚合 Web3 空投机会、链上数据、项目解析、钱包监控与招聘信息的每日更新站点。
+关注我们，掌握最新链上动态，跟踪主力钱包与潜力项目。
+"""
+
+# ✅ 主题参数（可选优化）
+[params]
+  env = "production"
+  description = "一个系统化的 Web3 多栏目内容导航站"
+  author = "Web3 Station"
+  ShowReadingTime = true
+  ShowToc = true
+  defaultTheme = "auto"  # 可选 light/dark/auto
+  ShowShareButtons = false
+  ShowCodeCopyButtons = true
+  comments = false
+  disableScrollToTop = false
+  hideFooter = false
+  googleAnalytics = ""
+# ✅ 搜索支持（可选）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# ✅ 多语言（如果你想做英文分站）
+[languages]
+  [languages.zh]
+    languageName = "中文"
+    weight = 1
+
+# ✅ 开启标记系统（如果你想做分类聚合页）
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+
