@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>作者列表示例 on 哈希说</title>
+    <link>http://localhost:1313/authors/</link>
+    <description>Recent content in 作者列表示例 on 哈希说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 哈希说</copyright>
+    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dummy Second Author</title>
+      <link>http://localhost:1313/authors/secondauthor/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/authors/secondauthor/</guid>
+      <description>&lt;p&gt;假装这里有一份第二位作者的简介。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Nuno Coração</title>
+      <link>http://localhost:1313/authors/nunocoracao/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/authors/nunocoracao/</guid>
+      <description>&lt;p&gt;假装这里有一份 Nuno 的简介。&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

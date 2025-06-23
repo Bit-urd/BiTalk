@@ -1,0 +1,50 @@
+[[main]]
+name = "空投聚合"
+pageRef = "airdrops"
+weight = 1
+
+[[main]]
+name = "钱包追踪"
+pageRef = "wallets"
+weight = 2
+
+
+[[main]]
+name = "数据榜单"
+pageRef = "rankings"
+weight = 4
+
+[[main]]
+name = "技术周报"
+pageRef = "weekly"
+weight = 5
+
+[[main]]
+name = "工具导航"
+pageRef = "tools"
+weight = 7
+
+[[main]]
+parent = "更多"
+name = "项目解析"
+pageRef = "projects"
+weight = 1
+
+[[main]]
+parent = "更多"
+name = "学习教程"
+pageRef = "tutorials"
+weight = 2
+
+[[main]]
+parent = "更多"
+name = "订阅入口"
+pageRef = "subscribe"
+weight = 3
+
+
+[[main]]
+parent = "更多"
+name = "招聘信息"
+pageRef = "jobs"
+weight = 4
