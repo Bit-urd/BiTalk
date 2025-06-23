@@ -1,5 +1,7 @@
 ---
+title: "空投聚合"
 date: 2025-06-23
+tags: ["空投", "LayerZero"]
 description: 定期聚合空投信息
 lastmod: '2020-10-09'
 ---
