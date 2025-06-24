@@ -19,6 +19,5 @@ description: "哈希说，Web3世界的内容雷达，教程 / 空投 / 周报 /
   </span>
 </div>
 
-{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
 
-
+{{< bilibili bvid="BV1WNN2zPEEX" autoplay="1" >}}
