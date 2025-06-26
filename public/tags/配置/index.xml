@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 on 哈希说</title>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 配置 on 哈希说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 哈希说</copyright>
+    <atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>配置</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/</guid>
+      <description>Blowfish 适宜个高度定制化的主题，使用到了一些 Hugo 中最新的特性来简化配</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/featured.svg" />
+    </item>
+    
+    <item>
+      <title>Front Matter(文件头信息)</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/</guid>
+      <description>除了 Hugo 中默认的 front matter ，Blowfish 主题中还添加了大量的参数</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/featured.svg" />
+    </item>
+    
+    <item>
+      <title>多创作者模式</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</guid>
+      <description>一个网站会有多个创作者共同贡献内容，所以需要再整个网站中默认</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/featured.svg" />
+    </item>
+    
+    <item>
+      <title>缩略图</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/</guid>
+      <description>缩略图 # Blowfish 对视觉支持进行了增强，可以让你轻松地为文章添加缩略</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>

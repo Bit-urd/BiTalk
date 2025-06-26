@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>简码 on 哈希说</title>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E7%AE%80%E7%A0%81/</link>
+    <description>Recent content in 简码 on 哈希说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 哈希说</copyright>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E7%AE%80%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>图标</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</guid>
+      <description>Blowfish 内置了许多 FontAwesome 6 中的图标。你可以使用 图标部分 或者图标短代码 将</description>
+      
+    </item>
+    
+    <item>
+      <title>简码示例</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</guid>
+      <description>这是&lt;strong&gt;简码&lt;/strong&gt;内容的示例。</description>
+      
+    </item>
+    
+    <item>
+      <title>数学表达式</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</guid>
+      <description>&lt;p&gt;KaTeX 可用于在文章中呈现数学表达式。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>流程图和思维导图</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</guid>
+      <description>使用 Mermaid 可以轻松地将图表和流程图添加到文章中。</description>
+      
+    </item>
+    
+    <item>
+      <title>图表</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</guid>
+      <description>Blowfish 包含 Chart.js，可实现强大的图表和数据可视化。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

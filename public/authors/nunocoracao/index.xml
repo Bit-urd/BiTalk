@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuno Coração on 哈希说</title>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/authors/nunocoracao/</link>
+    <description>Recent content in Nuno Coração on 哈希说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 哈希说</copyright>
+    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/authors/nunocoracao/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>多创作者模式</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</guid>
+      <description>一个网站会有多个创作者共同贡献内容，所以需要再整个网站中默认</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/featured.svg" />
+    </item>
+    
+    <item>
+      <title>多作者</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</guid>
+      <description>如何使用多个作者的简单示例。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,142 @@
+{
+  "featured": [
+    {
+      "name": "LayerZero",
+      "symbol": "ZRO",
+      "status": "active",
+      "deadline": "2025-07-15",
+      "estimatedValue": "$500-2000",
+      "difficulty": "medium",
+      "description": "全链互操作性协议，连接不同区块链网络",
+      "requirements": [
+        "使用Stargate进行跨链桥接",
+        "在支持的链上进行交互",
+        "最低交互金额: $100"
+      ],
+      "links": {
+        "tutorial": "/airdrops/2025-06-23-layerzero/",
+        "official": "https://layerzero.network"
+      },
+      "tags": ["跨链", "DeFi", "热门"]
+    },
+    {
+      "name": "zkSync Era",
+      "symbol": "ZK",
+      "status": "upcoming",
+      "deadline": "2025-07-01",
+      "estimatedValue": "$300-1500",
+      "difficulty": "easy",
+      "description": "以太坊Layer 2扩容解决方案，采用零知识证明技术",
+      "requirements": [
+        "在zkSync Era上进行交易",
+        "使用生态内DeFi协议",
+        "持有NFT或参与治理"
+      ],
+      "links": {
+        "tutorial": "/airdrops/2025-06-26-zksync-era/",
+        "official": "https://zksync.io"
+      },
+      "tags": ["Layer2", "zkEVM", "推荐"]
+    },
+    {
+      "name": "Scroll",
+      "symbol": "SCR",
+      "status": "active",
+      "deadline": "2025-08-01",
+      "estimatedValue": "$200-800",
+      "difficulty": "easy",
+      "description": "基于zkEVM的以太坊Layer 2解决方案",
+      "requirements": [
+        "桥接资产到Scroll网络",
+        "在Scroll上进行DeFi交互",
+        "参与测试网活动"
+      ],
+      "links": {
+        "tutorial": "/airdrops/2025-06-26-scroll/",
+        "official": "https://scroll.io"
+      },
+      "tags": ["Layer2", "zkEVM", "进行中"]
+    },
+    {
+      "name": "Blast",
+      "symbol": "BLAST",
+      "status": "upcoming",
+      "deadline": "2025-07-10",
+      "estimatedValue": "$400-1200",
+      "difficulty": "medium",
+      "description": "原生收益的以太坊Layer 2，为ETH和稳定币提供自动收益",
+      "requirements": [
+        "桥接ETH/USDB到Blast",
+        "邀请朋友获得积分加成",
+        "参与生态项目"
+      ],
+      "links": {
+        "tutorial": "#",
+        "official": "https://blast.io"
+      },
+      "tags": ["Layer2", "收益", "邀请制"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Layer 2",
+      "count": 8,
+      "description": "以太坊扩容解决方案"
+    },
+    {
+      "name": "DeFi",
+      "count": 12,
+      "description": "去中心化金融协议"
+    },
+    {
+      "name": "跨链",
+      "count": 5,
+      "description": "跨链桥接和互操作性"
+    },
+    {
+      "name": "NFT",
+      "count": 6,
+      "description": "非同质化代币项目"
+    },
+    {
+      "name": "GameFi",
+      "count": 4,
+      "description": "区块链游戏项目"
+    }
+  ],
+  "stats": {
+    "totalProjects": 35,
+    "activeProjects": 18,
+    "upcomingProjects": 12,
+    "completedProjects": 5,
+    "totalValueDistributed": "$2.5B",
+    "averageValue": "$450"
+  },
+  "tools": [
+    {
+      "name": "DeFiLlama Airdrops",
+      "url": "https://defillama.com/airdrops",
+      "description": "最权威的DeFi数据平台",
+      "category": "追踪"
+    },
+    {
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io",
+      "description": "专业空投信息聚合",
+      "category": "追踪"
+    },
+    {
+      "name": "DeBank",
+      "url": "https://debank.com",
+      "description": "Web3身份和资产管理",
+      "category": "管理"
+    },
+    {
+      "name": "Revoke.cash",
+      "url": "https://revoke.cash",
+      "description": "代币授权管理",
+      "category": "安全"
+    }
+  ],
+  "lastUpdated": "2025-06-26T17:00:00Z"
+}

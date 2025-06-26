@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>欢迎来到HashTalk! :tada: on 哈希说</title>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/</link>
+    <description>Recent content in 欢迎来到HashTalk! :tada: on 哈希说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 哈希说</copyright>
+    <lastBuildDate>Mon, 23 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>欢迎来到 Blowfish</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/</guid>
+      <description>Blowfish 包含了大量的特性功能。 Blowfish 的目标是开发一个简单且轻量级的主题</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/featured.svg" />
+    </item>
+    
+    <item>
+      <title>安装和配置</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/installation/</guid>
+      <description>如果想快速上手，可以按照标准的 Hugo 快速启动 文档。 更详细的安装如</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/installation/featured.svg" />
+    </item>
+    
+    <item>
+      <title>入门指南</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/getting-started/</guid>
+      <description>本节内容需要已经阅读了 安装 Blowfish 主题 。 我们刚刚推出了一个 CLI 工具，</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/getting-started/featured.svg" />
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/</guid>
+      <description>Blowfish 适宜个高度定制化的主题，使用到了一些 Hugo 中最新的特性来简化配</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/configuration/featured.svg" />
+    </item>
+    
+    <item>
+      <title>主页布局</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/homepage-layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/homepage-layout/</guid>
+      <description>Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主要模板，并提</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/homepage-layout/featured.svg" />
+    </item>
+    
+    <item>
+      <title>Front Matter(文件头信息)</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/</guid>
+      <description>除了 Hugo 中默认的 front matter ，Blowfish 主题中还添加了大量的参数</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/front-matter/featured.svg" />
+    </item>
+    
+    <item>
+      <title>多创作者模式</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/</guid>
+      <description>一个网站会有多个创作者共同贡献内容，所以需要再整个网站中默认</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/multi-author/featured.svg" />
+    </item>
+    
+    <item>
+      <title>局部模板(Partials)</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/partials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/partials/</guid>
+      <description>站点分析 # Blowfish 支持了 Fathom、Google 和 Umami。F</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/partials/featured.svg" />
+    </item>
+    
+    <item>
+      <title>缩略图</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/</guid>
+      <description>缩略图 # Blowfish 对视觉支持进行了增强，可以让你轻松地为文章添加缩略</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/thumbnails/featured.svg" />
+    </item>
+    
+    <item>
+      <title>内容示例</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/content-examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/content-examples/</guid>
+      <description>如果你已经按顺序阅读了文档，那么你现在应该已经了解了 Blowfish 中所有</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/content-examples/featured.svg" />
+    </item>
+    
+    <item>
+      <title>系列</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/series/</guid>
+      <description>Blowfish 提供了将一组文章分组到“系列”下的功能。将文章放在系列下将</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/series/featured.svg" />
+    </item>
+    
+    <item>
+      <title>进阶自定义</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/advanced-customisation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/advanced-customisation/</guid>
+      <description>您可以通过多种方式对 Blowfish 进行高级自定义。请阅读下文，了解更多可</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/advanced-customisation/featured.svg" />
+    </item>
+    
+    <item>
+      <title>托管和部署</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/hosting-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/hosting-deployment/</guid>
+      <description>有许多方法可以部署基于 Blowfish 主题的 Hugo 网站。这个主题几乎在任何部署</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/hosting-deployment/featured.svg" />
+    </item>
+    
+    <item>
+      <title>Firebase: 阅读量 &amp; 点赞量</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/firebase-views/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/firebase-views/</guid>
+      <description>为了能够在网站中获取动态数据，我们支持了对 Firebase 的集成。这将允许</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/firebase-views/featured.svg" />
+    </item>
+    
+    <item>
+      <title>订阅入口</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/subscribe/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/subscribe/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>工具导航</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tools/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tools/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>技术周报</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/weekly/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/weekly/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>空投聚合</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/airdrops/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/airdrops/</guid>
+      <description>🎁 空投信息聚合 # 欢迎来到哈希说空投聚合页面！我们为您精心收集</description>
+      
+    </item>
+    
+    <item>
+      <title>钱包追踪</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/wallets/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/wallets/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>数据榜单</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/rankings/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/rankings/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>项目解析</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/projects/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/projects/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>学习教程</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tutorials/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tutorials/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>招聘信息</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/jobs/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/jobs/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content</description>
+      
+    </item>
+    
+    <item>
+      <title>多作者</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</guid>
+      <description>如何使用多个作者的简单示例。</description>
+      
+    </item>
+    
+    <item>
+      <title>缩略图</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/thumbnail_sample/</link>
+      <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/thumbnail_sample/</guid>
+      <description>一个展示如何在你的文章中开始使用缩略图的快速示例。</description>
+      
+    </item>
+    
+    <item>
+      <title>图标</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</guid>
+      <description>Blowfish 内置了许多 FontAwesome 6 中的图标。你可以使用 图标部分 或者图标短代码 将</description>
+      
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/markdown/</guid>
+      <description>&lt;p&gt;本文提供了可在 Blowfish 中使用的基本 Markdown 格式示例，还展示了如何加入一些基本 HTML 元素。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>简码示例</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</guid>
+      <description>这是&lt;strong&gt;简码&lt;/strong&gt;内容的示例。</description>
+      
+    </item>
+    
+    <item>
+      <title>文本占位符</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/placeholder-text/</guid>
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>数学表达式</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</guid>
+      <description>&lt;p&gt;KaTeX 可用于在文章中呈现数学表达式。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>流程图和思维导图</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</guid>
+      <description>使用 Mermaid 可以轻松地将图表和流程图添加到文章中。</description>
+      
+    </item>
+    
+    <item>
+      <title>图表</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</guid>
+      <description>Blowfish 包含 Chart.js，可实现强大的图表和数据可视化。</description>
+      
+    </item>
+    
+    <item>
+      <title>Emoji 表情符号 :parachute:</title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/emoji/</guid>
+      <description>📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/shortcodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/shortcodes/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/shortcodes/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>
