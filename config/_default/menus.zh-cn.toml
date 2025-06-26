@@ -1,28 +1,7 @@
 [[main]]
-name = "空投聚合"
-pageRef = "airdrops"
-weight = 1
-
-[[main]]
-name = "钱包追踪"
-pageRef = "wallets"
-weight = 2
-
-
-[[main]]
 name = "数据榜单"
 pageRef = "rankings"
 weight = 3
-
-[[main]]
-name = "技术周报"
-pageRef = "weekly"
-weight = 4
-
-[[main]]
-name = "工具导航"
-pageRef = "tools"
-weight = 5
 
 [[main]]
 parent = "更多"
