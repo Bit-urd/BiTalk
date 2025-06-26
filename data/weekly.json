@@ -1,0 +1,263 @@
+{
+  "currentWeek": {
+    "weekNumber": 25,
+    "dateRange": "2025-06-23 - 2025-06-29",
+    "marketSentiment": "极度贪婪",
+    "fearGreedIndex": 72
+  },
+  "marketOverview": {
+    "totalMarketCap": 2450000000000,
+    "marketCapChange": 5.8,
+    "volume24h": 89500000000,
+    "volumeChange": 15.2,
+    "btcDominance": 52.3,
+    "btcDominanceChange": 0.8,
+    "activeAddresses": 1200000,
+    "activeAddressesChange": 3.2
+  },
+  "topGainers": [
+    {
+      "rank": 1,
+      "symbol": "PEPE",
+      "name": "Pepe",
+      "price": 0.000012,
+      "weeklyChange": 45.8,
+      "marketCapRank": 3,
+      "technicalRating": 5,
+      "recommendationRating": 4
+    },
+    {
+      "rank": 2,
+      "symbol": "ARB",
+      "name": "Arbitrum",
+      "price": 1.24,
+      "weeklyChange": 32.4,
+      "marketCapRank": 8,
+      "technicalRating": 5,
+      "recommendationRating": 5
+    },
+    {
+      "rank": 3,
+      "symbol": "OP",
+      "name": "Optimism",
+      "price": 2.18,
+      "weeklyChange": 28.9,
+      "marketCapRank": 12,
+      "technicalRating": 4,
+      "recommendationRating": 5
+    },
+    {
+      "rank": 4,
+      "symbol": "MATIC",
+      "name": "Polygon",
+      "price": 0.68,
+      "weeklyChange": 25.6,
+      "marketCapRank": 15,
+      "technicalRating": 4,
+      "recommendationRating": 4
+    },
+    {
+      "rank": 5,
+      "symbol": "UNI",
+      "name": "Uniswap",
+      "price": 8.45,
+      "weeklyChange": 23.1,
+      "marketCapRank": 18,
+      "technicalRating": 4,
+      "recommendationRating": 5
+    }
+  ],
+  "topLosers": [
+    {
+      "rank": 1,
+      "symbol": "LUNA",
+      "name": "Terra Luna Classic",
+      "price": 0.45,
+      "weeklyChange": -15.8,
+      "marketCapRank": 156,
+      "riskLevel": 3
+    },
+    {
+      "rank": 2,
+      "symbol": "FTT",
+      "name": "FTX Token",
+      "price": 1.23,
+      "weeklyChange": -12.4,
+      "marketCapRank": 234,
+      "riskLevel": 3
+    },
+    {
+      "rank": 3,
+      "symbol": "ICP",
+      "name": "Internet Computer",
+      "price": 4.56,
+      "weeklyChange": -8.9,
+      "marketCapRank": 45,
+      "riskLevel": 2
+    }
+  ],
+  "sectorAnalysis": [
+    {
+      "sector": "Layer2",
+      "performance": 28.5,
+      "leadingTokens": ["ARB", "OP", "MATIC"],
+      "marketDriver": "以太坊扩容需求增长，Layer2 TVL创新高",
+      "technicalOutlook": "突破关键阻力位，成交量放大",
+      "futureOutlook": "看多",
+      "targetUpside": "15-20%",
+      "netInflow": 2800000000
+    },
+    {
+      "sector": "DeFi",
+      "performance": 22.8,
+      "leadingTokens": ["UNI", "AAVE", "COMP"],
+      "marketDriver": "DeFi锁仓量回升，收益率提升",
+      "technicalOutlook": "多数币种突破下降趋势线",
+      "futureOutlook": "看多",
+      "targetUpside": "10-15%",
+      "netInflow": 1900000000
+    },
+    {
+      "sector": "Meme",
+      "performance": 35.2,
+      "leadingTokens": ["PEPE", "SHIB", "DOGE"],
+      "marketDriver": "社交媒体热度，散户FOMO情绪",
+      "technicalOutlook": "高波动性，需谨慎追高",
+      "futureOutlook": "中性",
+      "targetUpside": "5-10%",
+      "netInflow": 1200000000
+    }
+  ],
+  "technicalAnalysis": {
+    "btc": {
+      "currentPrice": 67850,
+      "weeklyChange": 8.5,
+      "supports": [65000, 62500, 60000],
+      "resistances": [70000, 72500, 75000],
+      "rsi": 68.5,
+      "macd": "金叉信号",
+      "ma20": 67200,
+      "bollingerBands": "价格触及上轨",
+      "patterns": ["突破下降楔形", "成交量配合放大"],
+      "risks": ["接近前高阻力区域"]
+    },
+    "eth": {
+      "currentPrice": 3450,
+      "weeklyChange": 12.3,
+      "supports": [3200, 3000, 2800],
+      "resistances": [3600, 3800, 4000],
+      "rsi": 72.3,
+      "macd": "强势金叉",
+      "ma50": 3280,
+      "volume": "明显放大",
+      "patterns": ["强势突破", "确认突破有效"]
+    }
+  },
+  "upcomingEvents": [
+    {
+      "date": "2025-07-01",
+      "event": "美联储利率决议",
+      "impact": 5,
+      "expectedEffect": "决定性影响"
+    },
+    {
+      "date": "2025-07-03",
+      "event": "以太坊升级提案",
+      "impact": 4,
+      "expectedEffect": "ETH生态利好"
+    },
+    {
+      "date": "2025-07-05",
+      "event": "就业数据公布",
+      "impact": 3,
+      "expectedEffect": "宏观面影响"
+    },
+    {
+      "date": "2025-07-08",
+      "event": "CPI通胀数据",
+      "impact": 4,
+      "expectedEffect": "市场情绪影响"
+    }
+  ],
+  "investmentStrategies": [
+    {
+      "strategy": "看多策略",
+      "allocation": 60,
+      "mainAssets": [
+        {"asset": "BTC", "percentage": 30},
+        {"asset": "ETH", "percentage": 20},
+        {"asset": "Layer2代币", "percentage": 10}
+      ],
+      "targetReturn": "15-25%",
+      "riskControl": "单币种不超过总仓位15%"
+    },
+    {
+      "strategy": "中性策略",
+      "allocation": 30,
+      "mainAssets": [
+        {"asset": "DeFi蓝筹", "percentage": 15},
+        {"asset": "稳定币理财", "percentage": 15}
+      ],
+      "targetReturn": "8-15%",
+      "riskControl": "严格止损，及时获利了结"
+    },
+    {
+      "strategy": "观望策略",
+      "allocation": 10,
+      "mainAssets": [
+        {"asset": "现金储备", "percentage": 10}
+      ],
+      "targetReturn": "等待机会",
+      "riskControl": "等待更好入场机会"
+    }
+  ],
+  "riskFactors": [
+    {
+      "category": "宏观风险",
+      "description": "美联储政策转向，全球流动性收紧",
+      "severity": "高"
+    },
+    {
+      "category": "技术风险",
+      "description": "BTC接近前高，回调压力增大",
+      "severity": "中"
+    },
+    {
+      "category": "监管风险",
+      "description": "各国加密货币监管政策变化",
+      "severity": "中"
+    },
+    {
+      "category": "市场风险",
+      "description": "获利了结压力，短期波动加剧",
+      "severity": "中"
+    }
+  ],
+  "exchangeData": [
+    {
+      "exchange": "Binance",
+      "volume24h": 31500000000,
+      "marketShare": 35.2
+    },
+    {
+      "exchange": "Coinbase",
+      "volume24h": 23100000000,
+      "marketShare": 25.8
+    },
+    {
+      "exchange": "OKX",
+      "volume24h": 18000000000,
+      "marketShare": 20.1
+    },
+    {
+      "exchange": "Bybit",
+      "volume24h": 13700000000,
+      "marketShare": 15.3
+    },
+    {
+      "exchange": "Others",
+      "volume24h": 3200000000,
+      "marketShare": 3.6
+    }
+  ]
+}

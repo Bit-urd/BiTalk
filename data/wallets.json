@@ -1,0 +1,372 @@
+{
+  "smartWallets": [
+    {
+      "id": "whale_hunter",
+      "name": "巨鲸Hunter",
+      "address": "0x742d35Cc6634C0532925a3b8D0C9964De7Cc35B2",
+      "emoji": "🐋",
+      "winRate": 89,
+      "roi": 156,
+      "trades": 23,
+      "followers": 15200,
+      "rating": 5,
+      "totalAssets": 28500000,
+      "avgHoldTime": "2-4周",
+      "tradingStyle": "中长线价值投资 + 热点追踪",
+      "mainHoldings": [
+        {"token": "ETH", "percentage": 35},
+        {"token": "PEPE", "percentage": 15},
+        {"token": "ARB", "percentage": 12},
+        {"token": "OP", "percentage": 10}
+      ],
+      "recentTrades": [
+        {
+          "time": "2h前",
+          "action": "买入",
+          "token": "PEPE",
+          "amount": "1.2B",
+          "cost": 2400000,
+          "currentValue": 2960000,
+          "pnl": 23.3
+        },
+        {
+          "time": "1天前",
+          "action": "卖出",
+          "token": "SHIB",
+          "amount": "800M",
+          "cost": 1800000,
+          "currentValue": 0,
+          "pnl": 45.2
+        }
+      ]
+    },
+    {
+      "id": "diamond_dave",
+      "name": "钻石手Dave",
+      "address": "0x1f9e8A7C4B5D6E2F8A9B3C7D1E5F9A2B6C8D4E7F",
+      "emoji": "💎",
+      "winRate": 85,
+      "roi": 134,
+      "trades": 31,
+      "followers": 12800,
+      "rating": 4,
+      "totalAssets": 18200000,
+      "avgHoldTime": "1-3周",
+      "tradingStyle": "价值投资 + 趋势跟随"
+    },
+    {
+      "id": "lightning_trader",
+      "name": "闪电交易员",
+      "address": "0x8b4f2D91A7C5E8F3B6D9A2C5E8F1B4D7A0C3E6F9",
+      "emoji": "⚡",
+      "winRate": 82,
+      "roi": 128,
+      "trades": 45,
+      "followers": 9600,
+      "rating": 4,
+      "totalAssets": 12500000,
+      "avgHoldTime": "3-7天",
+      "tradingStyle": "短线交易 + 热点追踪"
+    },
+    {
+      "id": "sniper_pro",
+      "name": "精准狙击手",
+      "address": "0x3c7a9E4F2B8D5A1C6F9B2E5A8D1C4F7B0E3A6D9C",
+      "emoji": "🎯",
+      "winRate": 78,
+      "roi": 112,
+      "trades": 18,
+      "followers": 7400,
+      "rating": 3,
+      "totalAssets": 8900000,
+      "avgHoldTime": "1-2周",
+      "tradingStyle": "精准入场 + 快速止盈"
+    },
+    {
+      "id": "rocket_booster",
+      "name": "火箭推进器",
+      "address": "0x9d2e7B8A5C1F4E7A0D3B6E9C2F5A8D1B4E7A0C3F",
+      "emoji": "🚀",
+      "winRate": 76,
+      "roi": 98,
+      "trades": 27,
+      "followers": 6200,
+      "rating": 3,
+      "totalAssets": 6700000,
+      "avgHoldTime": "5-10天",
+      "tradingStyle": "成长股投资 + 新项目发现"
+    }
+  ],
+  "hotTokens": {
+    "meme": [
+      {
+        "symbol": "PEPE",
+        "price": 0.000012,
+        "change24h": 23.5,
+        "smartMoneyInflow": 4200000,
+        "whaleHoldingChange": 15.8,
+        "heatIndex": 5
+      },
+      {
+        "symbol": "SHIB",
+        "price": 0.000018,
+        "change24h": 12.3,
+        "smartMoneyInflow": 2100000,
+        "whaleHoldingChange": 8.4,
+        "heatIndex": 4
+      },
+      {
+        "symbol": "DOGE",
+        "price": 0.085,
+        "change24h": 8.7,
+        "smartMoneyInflow": 1800000,
+        "whaleHoldingChange": 5.2,
+        "heatIndex": 3
+      },
+      {
+        "symbol": "FLOKI",
+        "price": 0.00015,
+        "change24h": 18.9,
+        "smartMoneyInflow": 1200000,
+        "whaleHoldingChange": 12.1,
+        "heatIndex": 4
+      }
+    ],
+    "layer2": [
+      {
+        "symbol": "ARB",
+        "price": 1.24,
+        "change24h": 15.2,
+        "smartMoneyInflow": 3800000,
+        "whaleHoldingChange": 11.5,
+        "heatIndex": 5
+      },
+      {
+        "symbol": "OP",
+        "price": 2.18,
+        "change24h": 9.8,
+        "smartMoneyInflow": 2500000,
+        "whaleHoldingChange": 7.3,
+        "heatIndex": 4
+      },
+      {
+        "symbol": "MATIC",
+        "price": 0.68,
+        "change24h": 6.4,
+        "smartMoneyInflow": 1900000,
+        "whaleHoldingChange": 4.8,
+        "heatIndex": 3
+      },
+      {
+        "symbol": "LRC",
+        "price": 0.32,
+        "change24h": 12.1,
+        "smartMoneyInflow": 800000,
+        "whaleHoldingChange": 9.2,
+        "heatIndex": 3
+      }
+    ],
+    "defi": [
+      {
+        "symbol": "UNI",
+        "price": 8.45,
+        "change24h": 11.3,
+        "smartMoneyInflow": 5200000,
+        "whaleHoldingChange": 8.7,
+        "heatIndex": 4
+      },
+      {
+        "symbol": "AAVE",
+        "price": 95.2,
+        "change24h": 7.8,
+        "smartMoneyInflow": 3100000,
+        "whaleHoldingChange": 6.1,
+        "heatIndex": 3
+      },
+      {
+        "symbol": "COMP",
+        "price": 58.9,
+        "change24h": 9.2,
+        "smartMoneyInflow": 1400000,
+        "whaleHoldingChange": 5.9,
+        "heatIndex": 3
+      },
+      {
+        "symbol": "SUSHI",
+        "price": 1.12,
+        "change24h": 14.5,
+        "smartMoneyInflow": 900000,
+        "whaleHoldingChange": 10.3,
+        "heatIndex": 4
+      }
+    ]
+  },
+  "recentActivities": [
+    {
+      "time": "14:32",
+      "wallet": "0x742d...35B2",
+      "action": "买入",
+      "actionType": "buy",
+      "token": "PEPE",
+      "amount": "1.2B",
+      "value": 2400000,
+      "impact": 5
+    },
+    {
+      "time": "14:28",
+      "wallet": "0x1f9e...8A7C",
+      "action": "卖出",
+      "actionType": "sell",
+      "token": "SHIB",
+      "amount": "500M",
+      "value": 1800000,
+      "impact": 4
+    },
+    {
+      "time": "14:15",
+      "wallet": "0x8b4f...2D91",
+      "action": "买入",
+      "actionType": "buy",
+      "token": "ARB",
+      "amount": "150K",
+      "value": 890000,
+      "impact": 4
+    },
+    {
+      "time": "14:02",
+      "wallet": "0x3c7a...9E4F",
+      "action": "卖出",
+      "actionType": "sell",
+      "token": "MATIC",
+      "amount": "200K",
+      "value": 650000,
+      "impact": 3
+    },
+    {
+      "time": "13:45",
+      "wallet": "0x9d2e...7B8A",
+      "action": "买入",
+      "actionType": "buy",
+      "token": "OP",
+      "amount": "80K",
+      "value": 520000,
+      "impact": 3
+    }
+  ],
+  "marketOverview": {
+    "totalMarketCap": 2450000000000,
+    "marketCapChange24h": 2.3,
+    "totalVolume24h": 89500000000,
+    "volumeChange24h": 15.8,
+    "btcDominance": 52.3,
+    "btcDominanceChange": 0.8,
+    "fearGreedIndex": 72,
+    "fearGreedLabel": "贪婪"
+  },
+  "sectorFlows": [
+    {
+      "sector": "Meme币",
+      "flow": 8300000,
+      "heatLevel": 5
+    },
+    {
+      "sector": "Layer2",
+      "flow": 7000000,
+      "heatLevel": 4
+    },
+    {
+      "sector": "DeFi",
+      "flow": 10600000,
+      "heatLevel": 4
+    },
+    {
+      "sector": "GameFi",
+      "flow": 2100000,
+      "heatLevel": 3
+    },
+    {
+      "sector": "NFT",
+      "flow": 800000,
+      "heatLevel": 2
+    },
+    {
+      "sector": "元宇宙",
+      "flow": 300000,
+      "heatLevel": 1
+    }
+  ],
+  "chainActivity": [
+    {
+      "chain": "Ethereum",
+      "volume24h": 45200000000,
+      "activity": 5,
+      "hotProjects": ["UNI", "PEPE", "SHIB"]
+    },
+    {
+      "chain": "BSC",
+      "volume24h": 12800000000,
+      "activity": 4,
+      "hotProjects": ["CAKE", "BNB"]
+    },
+    {
+      "chain": "Arbitrum",
+      "volume24h": 8900000000,
+      "activity": 4,
+      "hotProjects": ["ARB", "GMX"]
+    },
+    {
+      "chain": "Polygon",
+      "volume24h": 6700000000,
+      "activity": 3,
+      "hotProjects": ["MATIC", "QUICK"]
+    },
+    {
+      "chain": "Optimism",
+      "volume24h": 4300000000,
+      "activity": 3,
+      "hotProjects": ["OP", "SNX"]
+    }
+  ],
+  "tradingStrategies": [
+    {
+      "id": "smart_money_combo",
+      "name": "聪明钱组合",
+      "level": "金牌",
+      "description": "跟随TOP10聪明钱钱包",
+      "historicalReturn": 234,
+      "maxDrawdown": -15.8,
+      "winRate": 78,
+      "recommendedPosition": "20-30%"
+    },
+    {
+      "id": "hot_tracking",
+      "name": "热点追踪",
+      "level": "银牌",
+      "description": "基于异动数据的短线策略",
+      "historicalReturn": 156,
+      "maxDrawdown": -22.3,
+      "winRate": 65,
+      "recommendedPosition": "10-20%"
+    },
+    {
+      "id": "stable_follow",
+      "name": "稳健跟随",
+      "level": "铜牌",
+      "description": "长线价值投资跟单",
+      "historicalReturn": 89,
+      "maxDrawdown": -8.5,
+      "winRate": 85,
+      "recommendedPosition": "30-50%"
+    }
+  ],
+  "statistics": {
+    "dailyTrades": 1247,
+    "largeTrades": 89,
+    "smartMoneyActivity": 85,
+    "marketSentiment": "偏多",
+    "buyToSellRatio": 1.8,
+    "avgSmartMoneyHoldTime": 3.2,
+    "avgTradeSize": 485000,
+    "mostActiveHour": "14:00-16:00 UTC"
+  }
+}

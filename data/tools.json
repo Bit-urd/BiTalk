@@ -1,0 +1,630 @@
+{
+  "hotTools": [
+    {
+      "name": "DexScreener",
+      "url": "https://dexscreener.com",
+      "description": "实时DEX数据聚合器",
+      "features": ["实时价格追踪", "K线图表", "流动性分析"],
+      "pricing": "免费",
+      "rating": 5,
+      "category": "数据分析",
+      "isNew": true,
+      "hotLevel": 5
+    },
+    {
+      "name": "GMGN.ai",
+      "url": "https://gmgn.ai",
+      "description": "AI驱动的Meme币分析",
+      "features": ["智能筛选", "风险评估", "社交情绪分析"],
+      "pricing": "Freemium",
+      "rating": 5,
+      "category": "AI分析",
+      "isNew": true,
+      "hotLevel": 5
+    },
+    {
+      "name": "Birdeye",
+      "url": "https://birdeye.so",
+      "description": "Solana生态数据平台",
+      "features": ["代币分析", "钱包追踪", "交易洞察"],
+      "pricing": "免费",
+      "rating": 4,
+      "category": "数据分析",
+      "isNew": true,
+      "hotLevel": 4
+    },
+    {
+      "name": "Photon",
+      "url": "https://photon-sol.tinyastro.io",
+      "description": "Solana快速交易工具",
+      "features": ["抢跑交易", "MEV保护", "批量操作"],
+      "pricing": "付费",
+      "rating": 4,
+      "category": "交易工具",
+      "isNew": true,
+      "hotLevel": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "数据分析工具",
+      "id": "analytics",
+      "icon": "📊",
+      "tools": [
+        {
+          "name": "Nansen",
+          "url": "https://nansen.ai",
+          "description": "专业链上数据分析平台",
+          "features": ["聪明钱追踪", "钱包标签", "DeFi分析"],
+          "pricing": "$150/月起",
+          "rating": 5,
+          "isPremium": true
+        },
+        {
+          "name": "Dune Analytics",
+          "url": "https://dune.com",
+          "description": "自定义区块链数据查询",
+          "features": ["SQL查询", "数据可视化", "社区仪表板"],
+          "pricing": "免费 + 付费版",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
+          "description": "比特币链上数据分析",
+          "features": ["链上指标", "市场情绪", "机构数据"],
+          "pricing": "$29/月起",
+          "rating": 5,
+          "isPremium": true
+        },
+        {
+          "name": "Messari",
+          "url": "https://messari.io",
+          "description": "加密货币研究和数据",
+          "features": ["项目研报", "财务数据", "治理分析"],
+          "pricing": "免费 + Pro版",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Etherscan",
+          "url": "https://etherscan.io",
+          "description": "以太坊区块链浏览器",
+          "features": ["交易查询", "合约验证", "Gas追踪"],
+          "pricing": "免费 + API付费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Arkham",
+          "url": "https://arkham.com",
+          "description": "链上情报和分析平台",
+          "features": ["实体识别", "资金流向", "情报市场"],
+          "pricing": "免费 + 付费版",
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "DeFi工具",
+      "id": "defi",
+      "icon": "💰",
+      "tools": [
+        {
+          "name": "Uniswap",
+          "url": "https://app.uniswap.org",
+          "description": "去中心化交易所",
+          "features": ["代币交换", "流动性挖矿", "治理"],
+          "chains": ["Ethereum", "Polygon", "Arbitrum"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "1inch",
+          "url": "https://1inch.io",
+          "description": "DEX聚合器",
+          "features": ["最优价格路由", "Gas优化", "限价单"],
+          "chains": ["多链支持"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Aave",
+          "url": "https://aave.com",
+          "description": "去中心化借贷协议",
+          "features": ["存款赚息", "借贷", "闪电贷"],
+          "chains": ["Ethereum", "Polygon", "Avalanche"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Yearn Finance",
+          "url": "https://yearn.finance",
+          "description": "收益聚合器",
+          "features": ["自动化收益策略", "机枪池"],
+          "chains": ["Ethereum", "Fantom", "Arbitrum"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "PancakeSwap",
+          "url": "https://pancakeswap.finance",
+          "description": "BSC生态DEX",
+          "features": ["交易", "流动性挖矿", "NFT", "彩票"],
+          "chains": ["BSC", "Ethereum", "Aptos"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Curve Finance",
+          "url": "https://curve.fi",
+          "description": "稳定币交易专家",
+          "features": ["低滑点交易", "流动性挖矿"],
+          "chains": ["Ethereum", "Polygon", "Arbitrum"],
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "NFT工具",
+      "id": "nft",
+      "icon": "🎨",
+      "tools": [
+        {
+          "name": "OpenSea",
+          "url": "https://opensea.io",
+          "description": "最大的NFT市场",
+          "features": ["NFT交易", "创建", "拍卖"],
+          "chains": ["Ethereum", "Polygon", "Solana"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Blur",
+          "url": "https://blur.io",
+          "description": "专业NFT交易平台",
+          "features": ["高级交易", "批量操作", "实时数据"],
+          "chains": ["Ethereum"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Rarity Tools",
+          "url": "https://rarity.tools",
+          "description": "NFT稀有度分析",
+          "features": ["稀有度排名", "价格分析", "趋势追踪"],
+          "chains": ["Ethereum", "Solana"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "NFTGo",
+          "url": "https://nftgo.io",
+          "description": "NFT数据分析平台",
+          "features": ["市场分析", "巨鲸追踪", "投资组合"],
+          "chains": ["多链支持"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Foundation",
+          "url": "https://foundation.app",
+          "description": "艺术家NFT平台",
+          "features": ["艺术品拍卖", "创作者支持"],
+          "chains": ["Ethereum"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Magic Eden",
+          "url": "https://magiceden.io",
+          "description": "Solana NFT市场",
+          "features": ["NFT交易", "启动板", "游戏"],
+          "chains": ["Solana", "Ethereum", "Bitcoin"],
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "钱包管理",
+      "id": "wallets",
+      "icon": "👛",
+      "tools": [
+        {
+          "name": "MetaMask",
+          "url": "https://metamask.io",
+          "description": "最受欢迎的Web3钱包",
+          "features": ["多链支持", "DApp连接", "代币管理"],
+          "platforms": ["浏览器", "移动端"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Rainbow",
+          "url": "https://rainbow.me",
+          "description": "用户友好的移动钱包",
+          "features": ["简洁界面", "NFT展示", "DeFi集成"],
+          "platforms": ["iOS", "Android"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Ledger",
+          "url": "https://www.ledger.com",
+          "description": "硬件钱包领导者",
+          "features": ["冷存储", "多币种支持", "安全芯片"],
+          "type": "硬件钱包",
+          "rating": 5,
+          "isPremium": true
+        },
+        {
+          "name": "Trezor",
+          "url": "https://trezor.io",
+          "description": "开源硬件钱包",
+          "features": ["开源固件", "密码管理", "多重签名"],
+          "type": "硬件钱包",
+          "rating": 5,
+          "isPremium": true
+        },
+        {
+          "name": "Phantom",
+          "url": "https://phantom.app",
+          "description": "Solana生态钱包",
+          "features": ["Solana DApp", "NFT", "Staking"],
+          "platforms": ["浏览器", "移动端"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Rabby",
+          "url": "https://rabby.io",
+          "description": "多链钱包专家",
+          "features": ["多链管理", "交易预览", "安全检测"],
+          "platforms": ["浏览器扩展"],
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "投资组合管理",
+      "id": "portfolio",
+      "icon": "📈",
+      "tools": [
+        {
+          "name": "Zapper",
+          "url": "https://zapper.fi",
+          "description": "DeFi投资组合管理",
+          "features": ["资产追踪", "收益分析", "一键投资"],
+          "pricing": "免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "DeBank",
+          "url": "https://debank.com",
+          "description": "Web3投资组合追踪",
+          "features": ["多链资产", "DeFi协议", "NFT管理"],
+          "pricing": "免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Zerion",
+          "url": "https://zerion.io",
+          "description": "智能投资组合管理",
+          "features": ["资产管理", "交易执行", "收益追踪"],
+          "pricing": "免费 + Pro版",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Rotki",
+          "url": "https://rotki.com",
+          "description": "开源投资组合追踪",
+          "features": ["隐私保护", "税务报告", "本地数据"],
+          "pricing": "免费 + 付费版",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "CoinTracker",
+          "url": "https://cointracker.io",
+          "description": "加密货币税务工具",
+          "features": ["税务报告", "投资组合", "交易追踪"],
+          "pricing": "免费 + 付费版",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Blockfolio",
+          "url": "https://blockfolio.com",
+          "description": "移动端投资组合",
+          "features": ["价格追踪", "新闻聚合", "社区"],
+          "pricing": "免费",
+          "rating": 3,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "安全工具",
+      "id": "security",
+      "icon": "🔒",
+      "tools": [
+        {
+          "name": "Revoke.cash",
+          "url": "https://revoke.cash",
+          "description": "代币授权管理",
+          "features": ["查看和撤销代币授权", "安全检查"],
+          "pricing": "免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Pocket Universe",
+          "url": "https://www.pocketuniverse.app",
+          "description": "交易安全模拟器",
+          "features": ["交易预览", "风险检测", "诈骗防护"],
+          "pricing": "免费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "GoPlus Security",
+          "url": "https://gopluslabs.io",
+          "description": "智能合约安全检测",
+          "features": ["合约审计", "代币安全", "API服务"],
+          "pricing": "免费 + API付费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "CertiK",
+          "url": "https://www.certik.com",
+          "description": "区块链安全审计",
+          "features": ["智能合约审计", "安全评分", "监控"],
+          "pricing": "企业服务",
+          "rating": 5,
+          "isPremium": true
+        },
+        {
+          "name": "Forta",
+          "url": "https://forta.org",
+          "description": "实时安全监控网络",
+          "features": ["威胁检测", "异常监控", "安全警报"],
+          "pricing": "免费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Immunefi",
+          "url": "https://www.immunefi.com",
+          "description": "漏洞赏金平台",
+          "features": ["安全漏洞报告", "赏金计划", "审计服务"],
+          "pricing": "免费注册",
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "GameFi工具",
+      "id": "gamefi",
+      "icon": "🎮",
+      "tools": [
+        {
+          "name": "DappRadar",
+          "url": "https://dappradar.com",
+          "description": "DApp数据分析平台",
+          "features": ["游戏排行", "用户数据", "NFT追踪"],
+          "pricing": "免费 + Pro版",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "PlayToEarn",
+          "url": "https://playtoearn.net",
+          "description": "P2E游戏聚合器",
+          "features": ["游戏发现", "收益计算", "新闻资讯"],
+          "pricing": "免费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "CoinGecko Gaming",
+          "url": "https://www.coingecko.com/en/categories/gaming",
+          "description": "游戏代币追踪",
+          "features": ["游戏代币价格", "市值排名", "项目信息"],
+          "pricing": "免费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Footprint Analytics",
+          "url": "https://www.footprint.network",
+          "description": "GameFi数据分析",
+          "features": ["游戏数据", "用户行为", "收益分析"],
+          "pricing": "免费 + 付费版",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Immutable X",
+          "url": "https://www.immutable.com",
+          "description": "游戏NFT基础设施",
+          "features": ["零Gas费交易", "游戏集成", "NFT市场"],
+          "pricing": "开发者免费",
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Enjin",
+          "url": "https://www.enjin.io",
+          "description": "游戏NFT平台",
+          "features": ["NFT创建", "游戏集成", "市场交易"],
+          "pricing": "免费 + 企业版",
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "移动端工具",
+      "id": "mobile",
+      "icon": "📱",
+      "tools": [
+        {
+          "name": "CoinGecko App",
+          "url": "https://www.coingecko.com/en/mobile",
+          "description": "加密货币价格追踪",
+          "features": ["实时价格", "投资组合", "新闻"],
+          "platforms": ["iOS", "Android"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "TradingView",
+          "url": "https://www.tradingview.com/mobile/",
+          "description": "专业图表分析",
+          "features": ["K线图表", "技术指标", "社区分析"],
+          "platforms": ["iOS", "Android"],
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Whale Alert",
+          "url": "https://whale-alert.io",
+          "description": "大额转账监控",
+          "features": ["巨鲸动向", "大额交易", "实时通知"],
+          "platforms": ["iOS", "Android", "Twitter"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Coinbase App",
+          "url": "https://www.coinbase.com/mobile",
+          "description": "主流交易所应用",
+          "features": ["交易", "钱包", "学习赚币"],
+          "platforms": ["iOS", "Android"],
+          "rating": 4,
+          "isPremium": false
+        },
+        {
+          "name": "Binance App",
+          "url": "https://www.binance.com/en/mobile",
+          "description": "全球最大交易所",
+          "features": ["现货期货", "理财", "NFT"],
+          "platforms": ["iOS", "Android"],
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "name": "开发者工具",
+      "id": "developer",
+      "icon": "🔗",
+      "tools": [
+        {
+          "name": "Hardhat",
+          "url": "https://hardhat.org",
+          "description": "以太坊开发环境",
+          "features": ["智能合约开发", "测试", "部署"],
+          "pricing": "开源免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Remix IDE",
+          "url": "https://remix.ethereum.org",
+          "description": "在线智能合约IDE",
+          "features": ["代码编辑", "编译", "调试", "部署"],
+          "pricing": "免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "OpenZeppelin",
+          "url": "https://docs.openzeppelin.com",
+          "description": "智能合约库",
+          "features": ["安全合约模板", "审计工具"],
+          "pricing": "开源免费",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Infura",
+          "url": "https://infura.io",
+          "description": "区块链基础设施",
+          "features": ["节点服务", "API接口", "IPFS"],
+          "pricing": "免费 + 付费版",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "Alchemy",
+          "url": "https://www.alchemy.com",
+          "description": "Web3开发平台",
+          "features": ["节点服务", "开发工具", "分析"],
+          "pricing": "免费 + 付费版",
+          "rating": 5,
+          "isPremium": false
+        },
+        {
+          "name": "The Graph",
+          "url": "https://thegraph.com",
+          "description": "区块链数据索引",
+          "features": ["数据查询", "API构建", "去中心化索引"],
+          "pricing": "免费 + 付费版",
+          "rating": 4,
+          "isPremium": false
+        }
+      ]
+    }
+  ],
+  "learningResources": [
+    {
+      "name": "Binance Academy",
+      "url": "https://academy.binance.com",
+      "description": "免费加密货币教育",
+      "type": "教育平台"
+    },
+    {
+      "name": "Coinbase Learn",
+      "url": "https://www.coinbase.com/learn",
+      "description": "学习赚币计划",
+      "type": "教育平台"
+    },
+    {
+      "name": "Crypto Zombies",
+      "url": "https://cryptozombies.io",
+      "description": "智能合约编程游戏",
+      "type": "编程教学"
+    },
+    {
+      "name": "Buildspace",
+      "url": "https://buildspace.so",
+      "description": "Web3项目构建",
+      "type": "项目实战"
+    },
+    {
+      "name": "LearnWeb3",
+      "url": "https://learnweb3.io",
+      "description": "全栈Web3开发",
+      "type": "开发教程"
+    }
+  ],
+  "stats": {
+    "totalTools": 100,
+    "categories": 10,
+    "hotTools": 4,
+    "freeTools": 75,
+    "premiumTools": 25,
+    "lastUpdated": "2025-06-26"
+  }
+}
