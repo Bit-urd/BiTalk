@@ -2,25 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>新手 on 哈希说</title>
-    <link>http://localhost:1313/tags/%E6%96%B0%E6%89%8B/</link>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E6%96%B0%E6%89%8B/</link>
     <description>Recent content in 新手 on 哈希说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 哈希说</copyright>
-    <atom:link href="http://localhost:1313/tags/%E6%96%B0%E6%89%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/tags/%E6%96%B0%E6%89%8B/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>欢迎来到 Blowfish</title>
-      <link>http://localhost:1313/docs/welcome/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/welcome/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Blowfish 包含了大量的特性功能。
-&lt;/div&gt;
-
-&lt;p&gt;Blowfish 的目标是开发一个简单且轻量级的主题。 该主题是 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/nunocoracao/congo&#34;&gt;Congo&lt;/a&gt; 的一个分支，并进行了大量扩展。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/docs/welcome/featured.svg" />
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/</guid>
+      <description>Blowfish 包含了大量的特性功能。 Blowfish 的目标是开发一个简单且轻量级的主题</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/docs/welcome/featured.svg" />
     </item>
     
   </channel>

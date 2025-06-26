@@ -2,127 +2,119 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>示例 on 哈希说</title>
-    <link>http://localhost:1313/samples/</link>
+    <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/</link>
     <description>Recent content in 示例 on 哈希说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 哈希说</copyright>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/samples/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>多作者</title>
-      <link>http://localhost:1313/samples/multiple-authors/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</link>
       <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/multiple-authors/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/multiple-authors/</guid>
       <description>如何使用多个作者的简单示例。</description>
       
     </item>
     
     <item>
       <title>缩略图</title>
-      <link>http://localhost:1313/samples/thumbnail_sample/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/thumbnail_sample/</link>
       <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/thumbnail_sample/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/thumbnail_sample/</guid>
       <description>一个展示如何在你的文章中开始使用缩略图的快速示例。</description>
       
     </item>
     
     <item>
       <title>图标</title>
-      <link>http://localhost:1313/samples/icons/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/icons/</guid>
-      <description>&lt;p&gt;Blowfish 内置了许多 &lt;a
-  href=&#34;https://fontawesome.com/icons&#34;
-    target=&#34;_blank&#34;
-  &gt;FontAwesome 6&lt;/a&gt;
- 中的图标。你可以使用 &lt;a
-  href=&#34;http://localhost:1313/docs/partials/#icon&#34;&gt;图标部分&lt;/a&gt;
-或者&lt;a
-  href=&#34;http://localhost:1313/docs/shortcodes/#icon&#34;&gt;图标短代码&lt;/a&gt;
-将这些图标包含在你的网站中。&lt;/p&gt;</description>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/icons/</guid>
+      <description>Blowfish 内置了许多 FontAwesome 6 中的图标。你可以使用 图标部分 或者图标短代码 将</description>
       
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/samples/markdown/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/markdown/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/markdown/</guid>
       <description>&lt;p&gt;本文提供了可在 Blowfish 中使用的基本 Markdown 格式示例，还展示了如何加入一些基本 HTML 元素。&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>简码示例</title>
-      <link>http://localhost:1313/samples/rich-content/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/rich-content/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/rich-content/</guid>
       <description>这是&lt;strong&gt;简码&lt;/strong&gt;内容的示例。</description>
       
     </item>
     
     <item>
       <title>文本占位符</title>
-      <link>http://localhost:1313/samples/placeholder-text/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/placeholder-text/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>数学表达式</title>
-      <link>http://localhost:1313/samples/mathematical-notation/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/mathematical-notation/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/mathematical-notation/</guid>
       <description>&lt;p&gt;KaTeX 可用于在文章中呈现数学表达式。&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>流程图和思维导图</title>
-      <link>http://localhost:1313/samples/diagrams-flowcharts/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/diagrams-flowcharts/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/diagrams-flowcharts/</guid>
       <description>使用 Mermaid 可以轻松地将图表和流程图添加到文章中。</description>
       
     </item>
     
     <item>
       <title>图表</title>
-      <link>http://localhost:1313/samples/charts/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/charts/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/charts/</guid>
       <description>Blowfish 包含 Chart.js，可实现强大的图表和数据可视化。</description>
       
     </item>
     
     <item>
       <title>Emoji 表情符号 :parachute:</title>
-      <link>http://localhost:1313/samples/emoji/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/emoji/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/emoji/</guid>
       <description>📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸</description>
       
     </item>
     
     <item>
       <title>外部文章</title>
-      <link>http://localhost:1313/samples/external/</link>
+      <link>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/external/</link>
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/samples/external/</guid>
+      <guid>https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/samples/external/</guid>
       <description>&lt;code&gt;externalUrl&lt;/code&gt; front matter 参数可以链接到任何外部 URL.</description>
       
     </item>

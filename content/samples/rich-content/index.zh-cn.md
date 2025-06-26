@@ -19,7 +19,7 @@ Hugo 附带了几个用于丰富内容的[内置简码](https://gohugo.io/conten
 
 此示例使用 `x` 简码来显示推文。它需要两个参数 `user` 和 `id` 。
 
-{{< x user="DesignReviewed" id="1085870671291310081" >}}
+<!-- Twitter shortcode temporarily disabled -->
 
 或者，`tweet` 简码可用于生成嵌入式的 Twitter 卡片。
 
