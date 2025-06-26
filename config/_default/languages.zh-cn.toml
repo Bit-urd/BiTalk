@@ -1,7 +1,7 @@
 languageCode = "zh-cn"
 languageName = "简体中文"
 weight = 4
-title = "哈希说"
+title = "币淘"
 
 [params]
   displayName = "简体中文"
@@ -12,11 +12,11 @@ title = "哈希说"
   description = "Web3世界的内容雷达，教程 / 空投 / 周报 / 热榜 / 工具，一站搞定"
 
 [params.author]
-  name = "哈希说"
+  name = "币淘"
   image = "img/blowfish_logo.png"
   headline = "Web3世界的内容雷达，教程 / 空投 / 周报 / 热榜 / 工具，一站搞定"
   bio = "Web3世界的内容雷达，教程 / 空投 / 周报 / 热榜 / 工具，一站搞定"
   links = [
-    { x-twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
+    { x-twitter = "https://twitter.com/biturd" },
+    { github = "https://github.com/bit-urd" },
   ]

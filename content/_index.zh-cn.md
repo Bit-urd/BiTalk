@@ -1,6 +1,6 @@
 ---
-title: "欢迎来到HashTalk! :tada:"
-description: "哈希说，Web3世界的内容雷达，教程 / 空投 / 周报 / 热榜 / 工具，一站搞定"
+title: "欢迎来到BiTalk! :tada:"
+description: "币淘，Web3世界的内容雷达，教程 / 空投 / 周报 / 热榜 / 工具，一站搞定"
 ---
 
 

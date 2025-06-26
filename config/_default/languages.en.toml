@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "哈希说"
+title = "币淘"
 
 [params]
   displayName = "English"
@@ -12,12 +12,12 @@ title = "哈希说"
   description = "A powerful, lightweight theme for Hugo."
 
 [params.author]
-  name = "哈希说"
+  name = "币淘"
   email = "nuno@n9o.xyz"
   image = "img/blowfish_logo.png"
   headline = "A powerful, lightweight theme for Hugo."
   bio = "A powerful, lightweight theme for Hugo."
   links = [
-    { x-twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
+    { x-twitter = "https://twitter.com/biturd" },
+    { github = "https://github.com/bit-urd" },
   ]
