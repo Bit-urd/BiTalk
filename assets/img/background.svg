@@ -189,7 +189,7 @@
           <line x1="617.4923704804352" x2="543.549625942354" y1="123.41684480916788"
             y2="197.35958934724894" stroke-width="15" stroke="#93dbe9" stroke-linecap="round"></line>
           <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
-            keyTimes="0;1" repeatCount="indefinite" dur="10s"></animateTransform>
+            keyTimes="0;1" repeatCount="indefinite" dur="60s"></animateTransform>
         </g>
         <g>
           <line x1="95.73622575770466" x2="50.085335235319484" y1="20.45659654328417"
@@ -377,7 +377,7 @@
           <line x1="602.7628528697649" x2="584.9251498049699" y1="79.79001478147771"
             y2="97.6277178462727" stroke-width="15" stroke="#5e6fa3" stroke-linecap="round"></line>
           <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
-            keyTimes="0;1" repeatCount="indefinite" dur="5s"></animateTransform>
+            keyTimes="0;1" repeatCount="indefinite" dur="30s"></animateTransform>
         </g>
         <g>
           <line x1="93.6896305353637" x2="75.71575147590588" y1="83.83758835275793"
@@ -565,7 +565,7 @@
           <line x1="254.85435949520382" x2="240.10841684705935" y1="254.79057005056973"
             y2="269.5365126987142" stroke-width="15" stroke="#5e6fa3" stroke-linecap="round"></line>
           <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
-            keyTimes="0;1" repeatCount="indefinite" dur="10.3333333333333335s"></animateTransform>
+            keyTimes="0;1" repeatCount="indefinite" dur="60.3333333333333335s"></animateTransform>
         </g>
       </g>
     </pattern>

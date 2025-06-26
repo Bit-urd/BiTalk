@@ -48,3 +48,37 @@ parent = "更多"
 name = "招聘信息"
 pageRef = "jobs"
 weight = 9
+
+
+[[main]]
+identifier = "twitter"
+pre = "x-twitter"
+url = "https://twitter.com/biturd"
+weight = 200
+
+#[[main]]
+#  identifier = "mastodon"
+#  pre = "mastodon"
+#  weight = 300
+#  url = "https://masto.ai/@blowfish"
+
+[[main]]
+identifier = "github"
+pre = "github"
+url = "https://github.com/bit-urd"
+weight = 400
+
+
+# -- Footer Menu --
+# The footer menu is displayed at the bottom of the page, just before
+# the copyright notice. Configure as per the main menu above.
+
+[[footer]]
+name = "Tags"
+pageRef = "tags"
+weight = 10
+
+[[footer]]
+name = "Authors"
+pageRef = "authors"
+weight = 20

@@ -60,7 +60,7 @@
 [[main]]
   identifier = "twitter"
   pre = "x-twitter"
-  url = "https://twitter.com/burufugu"
+  url = "https://twitter.com/biturd"
   weight = 200
 
 #[[main]]
@@ -72,7 +72,7 @@
 [[main]]
   identifier = "github"
   pre = "github"
-  url = "https://github.com/nunocoracao/blowfish"
+  url = "https://github.com/bit-urd"
   weight = 400
 
 
