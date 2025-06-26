@@ -1,0 +1,31 @@
+Watching for changes in /workspace/BiTalk/{archetypes,assets,content,data,i18n,layouts,static}
+Watching for config changes in /workspace/BiTalk/hugo.yaml, /workspace/BiTalk/config/_default, /workspace/BiTalk/config/development
+Start building sites … 
+hugo v0.128.0-e6d2712ee062321dc2fc49e963597dd5a6157660+extended linux/amd64 BuildDate=2024-06-25T16:15:48Z VendorInfo=gohugoio
+
+WARN  "/workspace/BiTalk/content/airdrops/index.md:1:1": duplicate menu entry with identifier "空投聚合" in menu "main"
+WARN  "/workspace/BiTalk/content/jobs/index.md:1:1": duplicate menu entry with identifier "招聘信息" in menu "main"
+WARN  "/workspace/BiTalk/content/projects/index.md:1:1": duplicate menu entry with identifier "项目解析" in menu "main"
+WARN  "/workspace/BiTalk/content/rankings/index.md:1:1": duplicate menu entry with identifier "数据榜单" in menu "main"
+WARN  "/workspace/BiTalk/content/subscribe/index.md:1:1": duplicate menu entry with identifier "订阅入口" in menu "main"
+WARN  "/workspace/BiTalk/content/tools/index.md:1:1": duplicate menu entry with identifier "工具导航" in menu "main"
+WARN  "/workspace/BiTalk/content/tutorials/index.md:1:1": duplicate menu entry with identifier "学习教程" in menu "main"
+WARN  "/workspace/BiTalk/content/wallets/index.md:1:1": duplicate menu entry with identifier "钱包追踪" in menu "main"
+WARN  "/workspace/BiTalk/content/weekly/index.md:1:1": duplicate menu entry with identifier "技术周报" in menu "main"
+
+                   | ZH-CN  
+-------------------+--------
+  Pages            |   187  
+  Paginator pages  |     0  
+  Non-page files   |    67  
+  Static files     |     7  
+  Processed images |    52  
+  Aliases          |    66  
+  Cleaned          |     0  
+
+Built in 731 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at https://work-1-jdlyhqxzkvukkgym.prod-runtime.all-hands.dev:12000/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop

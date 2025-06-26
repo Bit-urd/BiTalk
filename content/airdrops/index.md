@@ -1,25 +1,159 @@
 ---
 title: "空投聚合"
 date: 2025-06-23
-tags: ["空投", "LayerZero"]
-description: 定期聚合空投信息
-lastmod: '2020-10-09'
+description: "定期聚合最新空投信息，包含项目分析、参与条件、操作教程等"
+lastmod: '2025-06-26'
+tags: ["空投", "DeFi", "Web3"]
+menu:
+    main: 
+        weight: -98
+        params:
+            icon: gift
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache License 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+# 🎁 空投信息聚合
 
-Hugo makes use of a variety of open source projects including:
+欢迎来到哈希说空投聚合页面！我们为您精心收集和分析最新的Web3空投机会，帮助您不错过任何有价值的项目。
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+## 📊 空投状态说明
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+- 🟢 **进行中** - 当前可以参与的空投活动
+- 🟡 **即将开始** - 预计近期开始的空投项目  
+- 🔴 **已结束** - 已经结束快照或分发的项目
+- ⚪ **待确认** - 项目方尚未正式确认的潜在空投
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+---
 
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+## 🔥 热门空投项目
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+### 🟢 LayerZero (ZRO)
+**状态**: 进行中 | **截止时间**: 2025-07-15 | **预估价值**: $500-2000
+
+LayerZero是全链互操作性协议，连接不同区块链网络。
+
+**参与条件**:
+- 使用Stargate进行跨链桥接
+- 在支持的链上进行交互
+- 最低交互金额: $100
+
+**快速参与**: [教程链接](/airdrops/2025-06-23-layerzero/)
+
+---
+
+### 🟡 zkSync Era 生态
+**状态**: 即将开始 | **预计时间**: 2025-07-01 | **预估价值**: $300-1500
+
+zkSync Era是以太坊Layer 2扩容解决方案，采用零知识证明技术。
+
+**参与条件**:
+- 在zkSync Era上进行交易
+- 使用生态内DeFi协议
+- 持有NFT或参与治理
+
+**准备工作**: 
+- 桥接资产到zkSync Era
+- 体验SyncSwap、Mute等DeFi协议
+
+---
+
+### 🟢 Scroll
+**状态**: 进行中 | **截止时间**: 2025-08-01 | **预估价值**: $200-800
+
+Scroll是基于zkEVM的以太坊Layer 2解决方案。
+
+**参与条件**:
+- 桥接资产到Scroll网络
+- 在Scroll上进行DeFi交互
+- 参与测试网活动
+
+**推荐操作**:
+- 使用官方桥接器
+- 在Ambient、Zebra等协议上提供流动性
+
+---
+
+### 🟡 Blast
+**状态**: 即将开始 | **预计时间**: 2025-07-10 | **预估价值**: $400-1200
+
+Blast是原生收益的以太坊Layer 2，为ETH和稳定币提供自动收益。
+
+**参与条件**:
+- 桥接ETH/USDB到Blast
+- 邀请朋友获得积分加成
+- 参与生态项目
+
+**注意事项**: 
+- 资金锁定期较长
+- 需要邀请码才能参与
+
+---
+
+## 🎯 参与策略建议
+
+### 💡 新手策略
+1. **从小额开始**: 每个项目投入$50-200测试
+2. **分散风险**: 不要把所有资金投入单一项目
+3. **学习为主**: 重点学习DeFi操作和钱包使用
+
+### 🚀 进阶策略
+1. **早期参与**: 关注项目测试网阶段
+2. **深度交互**: 不只是简单转账，要使用核心功能
+3. **社区参与**: 加入Discord、参与治理投票
+
+### ⚠️ 风险提醒
+- **智能合约风险**: 新项目可能存在漏洞
+- **资金安全**: 使用专门的交互钱包，不要放入大额资金
+- **假项目风险**: 验证官方链接，警惕钓鱼网站
+
+---
+
+## 📅 空投日历
+
+| 项目 | 状态 | 重要时间节点 | 操作建议 |
+|------|------|-------------|----------|
+| LayerZero | 🟢 进行中 | 7月15日快照 | 立即参与跨链操作 |
+| zkSync Era | 🟡 即将开始 | 7月1日开始 | 准备资金，关注公告 |
+| Scroll | 🟢 进行中 | 8月1日截止 | 持续交互，增加权重 |
+| Blast | 🟡 即将开始 | 7月10日开始 | 获取邀请码 |
+
+---
+
+## 🔗 实用工具
+
+### 空投追踪工具
+- [DeFiLlama Airdrops](https://defillama.com/airdrops) - 空投项目追踪
+- [Airdrops.io](https://airdrops.io) - 综合空投信息
+- [CoinMarketCap Airdrops](https://coinmarketcap.com/airdrops/) - 官方空投列表
+
+### 钱包推荐
+- **MetaMask** - 最通用的以太坊钱包
+- **Rabby** - 多链DeFi专用钱包
+- **OKX Wallet** - 支持多链的综合钱包
+
+### 安全工具
+- [Revoke.cash](https://revoke.cash) - 撤销代币授权
+- [Pocket Universe](https://pocketuniverse.app) - 交易安全检查
+- [Scam Sniffer](https://scamsniffer.io) - 钓鱼网站检测
+
+---
+
+## 📢 订阅更新
+
+想要第一时间获得最新空投信息？
+
+- 🐦 关注我们的 [Twitter](https://twitter.com/hashtalk_web3)
+- 📱 加入 [Telegram群组](https://t.me/hashtalk_web3)
+- 📧 订阅 [邮件通知](/subscribe/)
+
+---
+
+## ⚖️ 免责声明
+
+本页面提供的信息仅供参考，不构成投资建议。参与任何空投活动前，请：
+
+1. 自行研究项目背景和风险
+2. 确认官方信息的真实性
+3. 合理控制参与资金规模
+4. 了解相关法律法规要求
+
+投资有风险，参与需谨慎。哈希说不对任何投资损失承担责任。
