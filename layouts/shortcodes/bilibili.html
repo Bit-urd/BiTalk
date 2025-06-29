@@ -1,0 +1,10 @@
+{{- $bvid := .Get "bvid" -}}
+{{- $autoplay := .Get "autoplay" | default "0" -}}
+
+<iframe
+  src="https://player.bilibili.com/player.html?bvid={{ $bvid }}&autoplay={{ $autoplay }}"
+  scrolling="no"
+  frameborder="no"
+  allowfullscreen="true"
+  style="width:100%; height:500px;">
+</iframe>
