@@ -71,25 +71,34 @@ var updateMeta = () => {
   document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
 }
 
-{{ if and (.Site.Params.Logo) (.Site.Params.SecondaryLogo) }}
-{{ $primaryLogo := resources.Get .Site.Params.Logo }}
-{{ $secondaryLogo := resources.Get .Site.Params.SecondaryLogo }}
-{{ if and ($primaryLogo) ($secondaryLogo) }}
 var updateLogo = (targetAppearance) => {
   var imgElems = document.querySelectorAll("img.logo");
   var logoContainers = document.querySelectorAll("span.logo");
   
-  targetLogoPath = 
-    targetAppearance == "{{ .Site.Params.DefaultAppearance }}" ?
-    "{{ $primaryLogo.RelPermalink }}" : "{{ $secondaryLogo.RelPermalink }}"
-  for (const elem of imgElems) {
-    elem.setAttribute("src", targetLogoPath)
-  }
+  // Get logo paths from data attributes
+  const defaultLogo = document.documentElement.dataset.defaultLogo;
+  const secondaryLogo = document.documentElement.dataset.secondaryLogo;
+  const defaultAppearance = document.documentElement.dataset.defaultAppearance;
+  
+  if (defaultLogo && secondaryLogo) {
+    const targetLogoPath = targetAppearance == defaultAppearance ? 
+      defaultLogo : secondaryLogo;
+    
+    for (const elem of imgElems) {
+      elem.setAttribute("src", targetLogoPath);
+    }
 
-  {{ if eq $primaryLogo.MediaType.SubType "svg" }}
-  targetContent = 
-    targetAppearance == "{{ .Site.Params.DefaultAppearance }}" ?
-    `{{ $primaryLogo.Content | safeHTML }}` : `{{ $secondaryLogo.Content | safeHTML }}`
+    // Handle SVG logos if needed
+    if (targetLogoPath.endsWith('.svg')) {
+      fetch(targetLogoPath)
+        .then(response => response.text())
+        .then(svgContent => {
+          for (const container of logoContainers) {
+            container.innerHTML = svgContent;
+          }
+        });
+    }
+  }
   for (const container of logoContainers) {
     container.innerHTML = targetContent;
   }
