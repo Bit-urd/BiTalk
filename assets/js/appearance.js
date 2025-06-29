@@ -108,4 +108,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if(scroller && footer && scroller.getBoundingClientRect().top > footer.getBoundingClientRect().top) {
     scroller.hidden = true;
   }
+
+  // Weekly-specific appearance features
+  if (window.location.pathname.includes('/weekly/')) {
+    document.documentElement.classList.add('weekly-content');
+    // Add weekly-specific theme color
+    updateMeta();
+  }
 });

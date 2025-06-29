@@ -16,10 +16,19 @@ if (typeof auth !== "undefined") {
   }
 
   var update_views = function (node, id) {
+    // Special handling for weekly content
+    if (id.includes('weekly')) {
+      node.classList.add('weekly-views');
+    }
+    
     viewsCollection.doc(id).onSnapshot((doc) => {
       var data = doc.data();
       if (data) {
         node.innerText = numberWithCommas(data.views);
+        // Add tooltip for weekly content
+        if (id.includes('weekly')) {
+          node.title = 'Weekly readers';
+        }
       } else {
         node.innerText = 0;
       }

@@ -125,6 +125,16 @@ function remove_like_article(id_likes) {
 function process_article() {
   if (!liked_page) {
     like_article(id_likes);
+    // Special feedback for weekly content
+    if (oid_likes.includes('weekly')) {
+      const likeBtn = document.querySelector('#button_likes_text');
+      if (likeBtn) {
+        likeBtn.innerText = 'Thanks!';
+        setTimeout(() => {
+          likeBtn.innerText = '';
+        }, 2000);
+      }
+    }
   } else {
     remove_like_article(id_likes);
   }
