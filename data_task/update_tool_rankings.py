@@ -9,6 +9,13 @@ import seaborn as sns
 from bs4 import BeautifulSoup
 import re
 
+from config import config, logger
+from utils import (
+    retry_on_failure, safe_request, default_cache, default_rate_limiter,
+    ensure_directory, save_json, save_markdown, format_currency
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_dappradar_rankings():
     """
     Fetch DApp rankings from DappRadar
@@ -27,40 +34,52 @@ def fetch_dappradar_rankings():
             "order": "desc"
         }
         
-        response = requests.get(url, headers=headers, params=params)
+        response = safe_request(
+            url,
+            headers=headers,
+            params=params,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             data = response.json()
             return data.get("dapps", [])
         else:
-            print(f"Failed to fetch DappRadar rankings: {response.status_code}")
+            logger.error("Failed to fetch DappRadar rankings")
             # Return sample data for demonstration
             return get_sample_dapp_data()
     except Exception as e:
-        print(f"Error fetching DappRadar rankings: {e}")
+        logger.error(f"Error fetching DappRadar rankings: {e}")
         # Return sample data for demonstration
         return get_sample_dapp_data()
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_defi_llama_rankings():
     """
     Fetch DeFi protocol rankings from DefiLlama
     """
     try:
         url = "https://api.llama.fi/protocols"
-        response = requests.get(url)
+        response = safe_request(
+            url,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             data = response.json()
             return data
         else:
-            print(f"Failed to fetch DefiLlama rankings: {response.status_code}")
+            logger.error("Failed to fetch DefiLlama rankings")
             # Return sample data for demonstration
             return get_sample_defi_data()
     except Exception as e:
-        print(f"Error fetching DefiLlama rankings: {e}")
+        logger.error(f"Error fetching DefiLlama rankings: {e}")
         # Return sample data for demonstration
         return get_sample_defi_data()
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_nft_marketplace_rankings():
     """
     Fetch NFT marketplace rankings
@@ -74,9 +93,14 @@ def fetch_nft_marketplace_rankings():
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
         
-        response = requests.get(url, headers=headers)
+        response = safe_request(
+            url,
+            headers=headers,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             # Parse HTML response
             soup = BeautifulSoup(response.text, 'html.parser')
             
@@ -87,10 +111,10 @@ def fetch_nft_marketplace_rankings():
             # For demonstration, return sample data
             return get_sample_nft_marketplace_data()
         else:
-            print(f"Failed to fetch NFT marketplace rankings: {response.status_code}")
+            logger.error("Failed to fetch NFT marketplace rankings")
             return get_sample_nft_marketplace_data()
     except Exception as e:
-        print(f"Error fetching NFT marketplace rankings: {e}")
+        logger.error(f"Error fetching NFT marketplace rankings: {e}")
         return get_sample_nft_marketplace_data()
 
 def get_sample_dapp_data():
@@ -258,12 +282,13 @@ def update_historical_data(historical_data, current_data, category):
     
     return historical_data
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def generate_trend_chart(historical_data, category, metric, top_n=5, output_dir="static/img/rankings"):
     """
     Generate trend chart for top N items in a category
     """
     # Ensure output directory exists
-    os.makedirs(output_dir, exist_ok=True)
+    ensure_directory(output_dir)
     
     # Extract data for the chart
     dates = []
@@ -336,6 +361,7 @@ def generate_trend_chart(historical_data, category, metric, top_n=5, output_dir=
     chart_path = os.path.join(output_dir, f"{category}_{metric}_trend.png")
     plt.savefig(chart_path, dpi=300, bbox_inches='tight')
     plt.close()
+    logger.info(f"Generated trend chart: {chart_path}")
     
     return chart_path
 
@@ -425,64 +451,72 @@ For each category, we track metrics such as user activity, transaction volume, a
     return markdown
 
 def main():
-    # Configuration
-    data_dir = "data/rankings"
-    output_dir = "content/rankings"
-    img_dir = "static/img/rankings"
+    """Main function to orchestrate tool rankings update"""
+    logger.info("Starting tool rankings update process")
     
-    # Ensure directories exist
-    os.makedirs(data_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(img_dir, exist_ok=True)
+    try:
+        # Configuration
+        data_dir = os.path.join(config.paths.data_dir, "rankings")
+        output_dir = os.path.join(config.paths.content_dir, "rankings")
+        img_dir = os.path.join(config.paths.static_dir, "img", "rankings")
+        
+        # Ensure directories exist
+        ensure_directory(data_dir)
+        ensure_directory(output_dir)
+        ensure_directory(img_dir)
     
-    # Load historical data
-    historical_data_path = os.path.join(data_dir, "historical_rankings.json")
-    historical_data = load_historical_data(historical_data_path)
+        # Load historical data
+        historical_data_path = os.path.join(data_dir, "historical_rankings.json")
+        historical_data = load_historical_data(historical_data_path)
     
-    # Fetch current data
-    print("Fetching DApp rankings...")
-    dapps = fetch_dappradar_rankings()
+        # Fetch current data
+        logger.info("Fetching DApp rankings...")
+        dapps = fetch_dappradar_rankings()
+        
+        logger.info("Fetching DeFi protocol rankings...")
+        defi = fetch_defi_llama_rankings()
+        
+        logger.info("Fetching NFT marketplace rankings...")
+        nft_marketplaces = fetch_nft_marketplace_rankings()
     
-    print("Fetching DeFi protocol rankings...")
-    defi = fetch_defi_llama_rankings()
-    
-    print("Fetching NFT marketplace rankings...")
-    nft_marketplaces = fetch_nft_marketplace_rankings()
-    
-    # Update historical data
-    historical_data = update_historical_data(historical_data, dapps, "dapps")
-    historical_data = update_historical_data(historical_data, defi, "defi")
-    historical_data = update_historical_data(historical_data, nft_marketplaces, "nft_marketplaces")
-    
-    # Save updated historical data
-    save_historical_data(historical_data, historical_data_path)
-    
-    # Generate trend charts
-    print("Generating trend charts...")
-    chart_paths = {
-        "dapps_users_24h_trend.png": generate_trend_chart(historical_data, "dapps", "users_24h", 5, img_dir),
-        "defi_tvl_trend.png": generate_trend_chart(historical_data, "defi", "tvl", 5, img_dir),
-        "nft_marketplaces_volume_24h_usd_trend.png": generate_trend_chart(historical_data, "nft_marketplaces", "volume_24h_usd", 5, img_dir)
-    }
-    
-    # Generate markdown report
-    print("Generating markdown report...")
-    markdown = generate_markdown_report(dapps, defi, nft_marketplaces, chart_paths)
-    
-    # Save markdown report
-    with open(os.path.join(output_dir, "index.md"), "w") as f:
-        f.write(markdown)
-    
-    # Save current data as JSON
-    with open(os.path.join(data_dir, "current_rankings.json"), "w") as f:
-        json.dump({
+        # Update historical data
+        historical_data = update_historical_data(historical_data, dapps, "dapps")
+        historical_data = update_historical_data(historical_data, defi, "defi")
+        historical_data = update_historical_data(historical_data, nft_marketplaces, "nft_marketplaces")
+        
+        # Save updated historical data
+        save_historical_data(historical_data, historical_data_path)
+        
+        # Generate trend charts
+        logger.info("Generating trend charts...")
+        chart_paths = {
+            "dapps_users_24h_trend.png": generate_trend_chart(historical_data, "dapps", "users_24h", 5, img_dir),
+            "defi_tvl_trend.png": generate_trend_chart(historical_data, "defi", "tvl", 5, img_dir),
+            "nft_marketplaces_volume_24h_usd_trend.png": generate_trend_chart(historical_data, "nft_marketplaces", "volume_24h_usd", 5, img_dir)
+        }
+        
+        # Generate markdown report
+        logger.info("Generating markdown report...")
+        markdown_report = generate_markdown_report(dapps, defi, nft_marketplaces, chart_paths)
+        
+        # Save markdown report
+        report_path = os.path.join(output_dir, "index.md")
+        save_markdown(markdown_report, report_path)
+        
+        # Save current data as JSON
+        current_data_path = os.path.join(data_dir, "current_rankings.json")
+        save_json({
             "dapps": dapps,
             "defi": defi,
             "nft_marketplaces": nft_marketplaces,
             "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        }, f, indent=2)
-    
-    print("Rankings update complete!")
+        }, current_data_path)
+        
+        logger.info("Rankings update complete!")
+        
+    except Exception as e:
+        logger.error(f"Error in main rankings update process: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

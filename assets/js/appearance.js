@@ -99,13 +99,7 @@ var updateLogo = (targetAppearance) => {
         });
     }
   }
-  for (const container of logoContainers) {
-    container.innerHTML = targetContent;
-  }
-  {{ end }}
 }
-{{ end }}
-{{- end }}
 
 var getTargetAppearance = () => {
   return document.documentElement.classList.contains("dark") ? "dark" : "light"

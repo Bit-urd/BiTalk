@@ -1,108 +1,108 @@
 ---
-title: "空投聚合页面说明"
+title: "Airdrop Aggregation Page Description"
 date: 2025-06-26
 draft: true
 ---
 
-# 空投聚合页面功能说明
+# Airdrop Aggregation Page Function Description
 
-## 📁 页面结构
+## 📁 Page Structure
 
-### 主要页面
-1. **index.md** - 空投聚合主页
-   - 热门空投项目展示
-   - 参与策略建议
-   - 空投日历
-   - 实用工具推荐
+### Main Pages
+1. **index.md** - Main airdrop aggregation page
+   - Display of popular airdrop projects
+   - Participation strategy suggestions
+   - Airdrop calendar
+   - Recommended useful tools
 
-2. **具体项目页面**
-   - `2025-06-23-layerzero.md` - LayerZero空投详细指南
-   - `2025-06-26-zksync-era.md` - zkSync Era空投完整攻略
-   - `2025-06-26-scroll.md` - Scroll Layer 2空投攻略
+2. **Project Detail Pages**
+   - `2025-06-23-layerzero.md` - LayerZero detailed airdrop guide
+   - `2025-06-26-zksync-era.md` - zkSync Era complete airdrop strategy
+   - `2025-06-26-scroll.md` - Scroll Layer 2 airdrop strategy
 
-3. **工具和指南**
-   - `tools.md` - 空投追踪工具大全
-   - `risk-assessment.md` - 空投风险评估指南
+3. **Tools and Guides**
+   - `tools.md` - Airdrop tracking tools collection
+   - `risk-assessment.md` - Airdrop risk assessment guide
 
-## 🎯 核心功能
+## 🎯 Core Functions
 
-### 1. 项目聚合展示
-- 按状态分类（进行中/即将开始/已结束）
-- 预估价值和参与难度
-- 快速参与链接
+### 1. Project Aggregation Display
+- Categorized by status (Ongoing/Upcoming/Ended)
+- Estimated value and participation difficulty
+- Quick participation links
 
-### 2. 详细教程指南
-- 项目深度分析
-- 逐步操作教程
-- 成本效益分析
-- 风险提醒
+### 2. Detailed Tutorial Guides
+- In-depth project analysis
+- Step-by-step operation tutorials
+- Cost-benefit analysis
+- Risk reminders
 
-### 3. 工具资源整合
-- 追踪工具推荐
-- 安全工具介绍
-- 自动化设置指南
+### 3. Tool Resource Integration
+- Recommended tracking tools
+- Security tool introduction
+- Automation setup guide
 
-### 4. 风险管理
-- 风险评估框架
-- 资金管理策略
-- 常见风险案例
+### 4. Risk Management
+- Risk assessment framework
+- Fund management strategies
+- Common risk cases
 
-## 📊 数据支持
+## 📊 Data Support
 
 ### airdrops.json
-包含结构化的空投数据：
-- 项目基本信息
-- 状态和时间线
-- 参与要求
-- 预估收益
+Contains structured airdrop data:
+- Basic project information
+- Status and timeline
+- Participation requirements
+- Estimated returns
 
-### 动态内容
-- 实时更新的项目状态
-- 社区反馈和评分
-- 市场数据集成
+### Dynamic Content
+- Real-time project status updates
+- Community feedback and ratings
+- Market data integration
 
-## 🔄 更新机制
+## 🔄 Update Mechanism
 
-### 内容更新
-- 每周更新项目状态
-- 新项目及时添加
-- 过期项目归档处理
+### Content Updates
+- Weekly project status updates
+- Timely addition of new projects
+- Archiving of expired projects
 
-### 数据维护
-- JSON数据定期更新
-- 链接有效性检查
-- 用户反馈处理
+### Data Maintenance
+- Regular updates of JSON data
+- Link validity checks
+- User feedback handling
 
-## 🎨 设计特色
+## 🎨 Design Features
 
-### 用户体验
-- 清晰的状态标识（🟢🟡🔴⚪）
-- 结构化的信息展示
-- 快速导航和搜索
+### User Experience
+- Clear status indicators (🟢🟡🔴⚪)
+- Structured information display
+- Quick navigation and search
 
-### 内容组织
-- 从概览到详细的层次结构
-- 相关内容的交叉引用
-- 实用工具的集中展示
+### Content Organization
+- Hierarchical structure from overview to details
+- Cross-references to related content
+- Centralized display of practical tools
 
-## 📈 未来扩展
+## 📈 Future Expansion
 
-### 功能增强
-- 用户个人追踪面板
-- 自动化提醒系统
-- 社区评分和评论
+### Function Enhancement
+- User personal tracking dashboard
+- Automated notification system
+- Community ratings and reviews
 
-### 数据集成
-- API数据自动更新
-- 第三方工具集成
-- 实时价格和TVL数据
+### Data Integration
+- Automatic API data updates
+- Third-party tool integration
+- Real-time price and TVL data
 
-### 社区功能
-- 用户经验分享
-- 项目讨论区
-- 专家分析文章
+### Community Features
+- User experience sharing
+- Project discussion area
+- Expert analysis articles
 
 ---
 
-*创建时间: 2025-06-26*  
-*维护者: 哈希说团队*
+*Created: 2025-06-26*  
+*Maintainer: Hashuo Team*

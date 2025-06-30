@@ -6,47 +6,78 @@ from datetime import datetime, timedelta
 import os
 from bs4 import BeautifulSoup
 import re
+import logging
 
+from config import config, logger
+from utils import (
+    retry_on_failure, safe_request, default_cache, default_rate_limiter,
+    ensure_directory, save_json, save_markdown, truncate_text
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_twitter_info(project_handle):
     """
-    Fetch project information from Twitter
-    Note: Twitter API requires authentication, this is a simplified version
-    In a real implementation, you would use the Twitter API with proper authentication
+    Fetch project information from Twitter/X
+    Note: Using alternative sources due to API restrictions
     """
+    cache_key = f"twitter_{project_handle}"
+    cached_data = default_cache.get(cache_key)
+    if cached_data:
+        logger.debug(f"Using cached Twitter data for {project_handle}")
+        return cached_data
+    
     try:
-        # This is a mock implementation
-        # In a real scenario, you would use Twitter API with proper authentication
-        url = f"https://nitter.net/{project_handle}"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-        }
-        response = requests.get(url, headers=headers)
+        # Use alternative Twitter frontends
+        urls_to_try = [
+            f"https://nitter.net/{project_handle}",
+            f"https://nitter.it/{project_handle}",
+            f"https://twitter.com/{project_handle}"  # Fallback
+        ]
         
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, 'html.parser')
+        headers = {"User-Agent": config.scraping.user_agent}
+        
+        for url in urls_to_try:
+            logger.debug(f"Trying to fetch Twitter info from {url}")
+            response = safe_request(url, headers=headers, timeout=config.scraping.timeout, 
+                                  rate_limiter=default_rate_limiter)
             
-            # Extract follower count (simplified)
-            follower_text = soup.select_one('.profile-stat-num')
-            follower_count = follower_text.text.strip() if follower_text else "N/A"
-            
-            # Extract recent tweets
-            tweets = []
-            tweet_elements = soup.select('.timeline-item')
-            for tweet_elem in tweet_elements[:5]:  # Get 5 most recent tweets
-                tweet_text_elem = tweet_elem.select_one('.tweet-content')
-                if tweet_text_elem:
-                    tweets.append(tweet_text_elem.text.strip())
-            
-            return {
-                "handle": project_handle,
-                "follower_count": follower_count,
-                "recent_tweets": tweets
-            }
-        else:
-            print(f"Failed to fetch Twitter info for {project_handle}: {response.status_code}")
-            return None
+            if response and response.status_code == 200:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                # Extract follower count (simplified)
+                follower_text = soup.select_one('.profile-stat-num, .NumberFormatter')
+                follower_count = follower_text.text.strip() if follower_text else "N/A"
+                
+                # Extract recent tweets
+                tweets = []
+                tweet_selectors = ['.timeline-item', '.tweet', '[data-testid="tweet"]']
+                
+                for selector in tweet_selectors:
+                    tweet_elements = soup.select(selector)
+                    if tweet_elements:
+                        for tweet_elem in tweet_elements[:5]:
+                            tweet_text_elem = tweet_elem.select_one('.tweet-content, [data-testid="tweetText"]')
+                            if tweet_text_elem:
+                                tweets.append(truncate_text(tweet_text_elem.text.strip(), 200))
+                        break
+                
+                result = {
+                    "handle": project_handle,
+                    "follower_count": follower_count,
+                    "recent_tweets": tweets,
+                    "source_url": url
+                }
+                
+                # Cache the result
+                default_cache.set(cache_key, result)
+                logger.info(f"Successfully fetched Twitter info for {project_handle}")
+                return result
+        
+        logger.warning(f"Failed to fetch Twitter info for {project_handle} from all sources")
+        return None
+        
     except Exception as e:
-        print(f"Error fetching Twitter info for {project_handle}: {e}")
+        logger.error(f"Error fetching Twitter info for {project_handle}: {e}")
         return None
 
 def fetch_zealy_quests(project_slug):
@@ -351,45 +382,85 @@ def generate_markdown_report(projects, calendar, project_dates):
     return markdown
 
 def main():
-    # Create directories
-    os.makedirs("data/airdrops", exist_ok=True)
-    os.makedirs("content/airdrops", exist_ok=True)
+    """Main function to orchestrate airdrop data collection"""
+    logger.info("Starting airdrop data collection process")
     
-    # Fetch airdrop projects
-    print("Fetching airdrop projects...")
-    projects = fetch_airdrop_projects()
-    
-    # Enrich project data
-    print("Enriching project data...")
-    enriched_projects = enrich_project_data(projects)
-    
-    # Generate airdrop calendar
-    print("Generating airdrop calendar...")
-    calendar, project_dates = generate_airdrop_calendar(enriched_projects)
-    
-    # Generate markdown report
-    print("Generating markdown report...")
-    markdown = generate_markdown_report(enriched_projects, calendar, project_dates)
-    
-    # Save markdown report
-    with open("content/airdrops/index.md", "w") as f:
-        f.write(markdown)
-    
-    # Save raw data as JSON
-    with open("data/airdrops/projects.json", "w") as f:
-        # Convert to serializable format
+    try:
+        # Create directories
+        airdrops_data_dir = os.path.join(config.paths.data_dir, "airdrops")
+        airdrops_content_dir = os.path.join(config.paths.content_dir, "airdrops")
+        
+        ensure_directory(airdrops_data_dir)
+        ensure_directory(airdrops_content_dir)
+        
+        # Fetch airdrop projects
+        logger.info("Fetching airdrop projects...")
+        projects = fetch_airdrop_projects()
+        
+        if not projects:
+            logger.error("No airdrop projects found")
+            return
+        
+        # Enrich project data
+        logger.info(f"Enriching data for {len(projects)} projects...")
+        enriched_projects = enrich_project_data(projects)
+        
+        # Generate airdrop calendar
+        logger.info("Generating airdrop calendar...")
+        calendar, project_dates = generate_airdrop_calendar(enriched_projects)
+        
+        # Generate markdown report
+        logger.info("Generating markdown report...")
+        markdown = generate_markdown_report(enriched_projects, calendar, project_dates)
+        
+        # Save files
+        markdown_path = os.path.join(airdrops_content_dir, "index.md")
+        projects_path = os.path.join(airdrops_data_dir, "projects.json")
+        calendar_path = os.path.join(airdrops_data_dir, "calendar.json")
+        
+        # Save markdown report
+        save_markdown(markdown, markdown_path)
+        
+        # Save raw data as JSON
         serializable_projects = []
         for project in enriched_projects:
-            serializable_project = {k: v for k, v in project.items() if k not in ['twitter_info', 'zealy_info', 'galxe_info']}
+            # Keep only serializable data
+            serializable_project = {
+                k: v for k, v in project.items() 
+                if k not in ['twitter_info', 'zealy_info', 'galxe_info'] or v is None
+            }
+            # Add summary of external data
+            if project.get('twitter_info'):
+                serializable_project['has_twitter_data'] = True
+            if project.get('zealy_info'):
+                serializable_project['has_zealy_data'] = True
+            if project.get('galxe_info'):
+                serializable_project['has_galxe_data'] = True
+            
             serializable_projects.append(serializable_project)
         
-        json.dump(serializable_projects, f, indent=2)
-    
-    # Save calendar as JSON
-    with open("data/airdrops/calendar.json", "w") as f:
-        json.dump(calendar, f, indent=2)
-    
-    print("Airdrop data processing complete!")
+        save_json(serializable_projects, projects_path)
+        save_json(calendar, calendar_path)
+        
+        logger.info(f"Airdrop data processing complete! Processed {len(enriched_projects)} projects")
+        
+        # Generate summary stats
+        stats = {
+            "total_projects": len(enriched_projects),
+            "projects_with_twitter": len([p for p in enriched_projects if p.get('twitter_info')]),
+            "projects_with_zealy": len([p for p in enriched_projects if p.get('zealy_info')]),
+            "projects_with_galxe": len([p for p in enriched_projects if p.get('galxe_info')]),
+            "last_updated": datetime.now().isoformat()
+        }
+        
+        stats_path = os.path.join(airdrops_data_dir, "stats.json")
+        save_json(stats, stats_path)
+        
+        logger.info(f"Statistics: {stats}")
+        
+    except Exception as e:
+        logger.error(f"Error in main airdrop processing: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

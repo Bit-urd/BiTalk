@@ -8,14 +8,21 @@ import re
 import random
 from bs4 import BeautifulSoup
 
+from config import config, logger
+from utils import (
+    retry_on_failure, safe_request, default_cache, default_rate_limiter,
+    ensure_directory, save_json, save_markdown, truncate_text, get_time_ago
+)
+
 # Try to import OpenAI, but provide fallback if not available
 try:
     import openai
     OPENAI_AVAILABLE = True
 except ImportError:
     OPENAI_AVAILABLE = False
-    print("OpenAI module not available. Using sample data for ChatGPT functions.")
+    logger.warning("OpenAI module not available. Using sample data for ChatGPT functions.")
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_crypto_news(api_key=None, count=10):
     """
     Fetch latest crypto news from a news API
@@ -32,16 +39,21 @@ def fetch_crypto_news(api_key=None, count=10):
         }
 
         try:
-            response = requests.get(url, params=params)
+            response = safe_request(
+                url,
+                params=params,
+                timeout=config.scraping.timeout,
+                rate_limiter=default_rate_limiter
+            )
 
-            if response.status_code == 200:
+            if response:
                 data = response.json()
                 return data.get("articles", [])
             else:
-                print(f"Failed to fetch news: {response.status_code}")
+                logger.error("Failed to fetch news")
                 return get_sample_news()
         except Exception as e:
-            print(f"Error fetching news: {e}")
+            logger.error(f"Error fetching news: {e}")
             return get_sample_news()
     else:
         # Use sample data if no API key
@@ -151,6 +163,7 @@ def extract_keywords(news_articles, trending_topics):
     # Return top keywords
     return [{"keyword": word, "count": count} for word, count in sorted_words[:20]]
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def generate_news_summary(news_articles, api_key=None):
     """
     Generate a summary of news articles using ChatGPT
@@ -160,7 +173,7 @@ def generate_news_summary(news_articles, api_key=None):
         return get_sample_summary(news_articles)
 
     try:
-        openai.api_key = api_key
+        client = openai.OpenAI(api_key=api_key)
 
         # Prepare news data for the prompt
         news_text = "\n\n".join([
@@ -175,16 +188,16 @@ def generate_news_summary(news_articles, api_key=None):
 Create a 3-paragraph summary that highlights the most important developments and their potential impact on the market.
 """
 
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
             max_tokens=500,
             temperature=0.7
         )
 
-        return response.choices[0].text.strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        print(f"Error generating summary with ChatGPT: {e}")
+        logger.error(f"Error generating summary with ChatGPT: {e}")
         return get_sample_summary(news_articles)
 
 def get_sample_summary(news_articles):
@@ -199,6 +212,7 @@ Meanwhile, Ethereum's recent network upgrade has successfully reduced gas fees b
 On the regulatory front, there are signs of potential progress as an SEC Commissioner has publicly advocated for clearer cryptocurrency regulations. This development coincides with traditional financial institutions expanding their crypto offerings, exemplified by a major global bank launching custody services for institutional clients, further bridging the gap between traditional finance and digital assets.
 """
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def generate_content_script(topic, keywords, api_key=None):
     """
     Generate a content script for a given topic using ChatGPT
@@ -225,16 +239,17 @@ Format the script with clear sections for INTRO, MAIN POINTS, and CONCLUSION.
 Keep it under 500 words and make it engaging for a crypto audience.
 """
 
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
+        client = openai.OpenAI(api_key=api_key)
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
             max_tokens=600,
             temperature=0.8
         )
 
-        return response.choices[0].text.strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        print(f"Error generating script with ChatGPT: {e}")
+        logger.error(f"Error generating script with ChatGPT: {e}")
         return get_sample_script(topic)
 
 def get_sample_script(topic):
@@ -332,83 +347,76 @@ The following script templates can be used as starting points for creating conte
 
     return markdown
 
-def get_time_ago(dt):
-    """
-    Convert datetime to "time ago" format
-    """
-    now = datetime.now()
-    diff = now - dt
-
-    if diff.days > 0:
-        return f"{diff.days}d ago"
-    elif diff.seconds >= 3600:
-        return f"{diff.seconds // 3600}h ago"
-    elif diff.seconds >= 60:
-        return f"{diff.seconds // 60}m ago"
-    else:
-        return "Just now"
+# get_time_ago function is now imported from utils
 
 def main():
-    # Configuration
-    output_dir = "content/daily"
-    data_dir = "data/daily"
+    """Main function to orchestrate daily headlines generation"""
+    logger.info("Starting daily headlines generation process")
+    
+    try:
+        # Configuration
+        output_dir = os.path.join(config.paths.content_dir, "daily")
+        data_dir = os.path.join(config.paths.data_dir, "daily")
 
-    # Ensure directories exist
-    os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(data_dir, exist_ok=True)
+        # Ensure directories exist
+        ensure_directory(output_dir)
+        ensure_directory(data_dir)
 
-    # API keys (in a real implementation, use environment variables)
-    news_api_key = os.environ.get("NEWS_API_KEY")
-    openai_api_key = os.environ.get("OPENAI_API_KEY")
+        # API keys from config
+        news_api_key = config.api.news_api_key
+        openai_api_key = config.api.openai_api_key
 
-    # Fetch data
-    print("Fetching latest crypto news...")
-    news = fetch_crypto_news(news_api_key)
+        # Fetch data
+        logger.info("Fetching latest crypto news...")
+        news = fetch_crypto_news(news_api_key)
 
-    print("Fetching trending topics...")
-    topics = fetch_trending_topics()
+        logger.info("Fetching trending topics...")
+        topics = fetch_trending_topics()
 
-    # Extract keywords
-    print("Extracting keywords...")
-    keywords = extract_keywords(news, topics)
+        # Extract keywords
+        logger.info("Extracting keywords...")
+        keywords = extract_keywords(news, topics)
 
-    # Generate news summary
-    print("Generating news summary...")
-    summary = generate_news_summary(news, openai_api_key)
+        # Generate news summary
+        logger.info("Generating news summary...")
+        summary = generate_news_summary(news, openai_api_key)
 
-    # Generate content scripts for top topics
-    print("Generating content scripts...")
-    scripts = {}
-    for topic in topics[:3]:
-        print(f"Generating script for {topic['topic']}...")
-        scripts[topic['topic']] = generate_content_script(topic['topic'], keywords, openai_api_key)
-        time.sleep(1)  # Avoid rate limiting
+        # Generate content scripts for top topics
+        logger.info("Generating content scripts...")
+        scripts = {}
+        for topic in topics[:3]:
+            logger.info(f"Generating script for {topic['topic']}...")
+            scripts[topic['topic']] = generate_content_script(topic['topic'], keywords, openai_api_key)
+            time.sleep(config.scraping.request_delay)  # Avoid rate limiting
 
-    # Generate markdown report
-    print("Generating markdown report...")
-    markdown = generate_markdown_report(news, topics, keywords, summary, scripts)
+        # Generate markdown report
+        logger.info("Generating markdown report...")
+        markdown_report = generate_markdown_report(news, topics, keywords, summary, scripts)
 
-    # Save markdown report
-    today = datetime.now().strftime("%Y-%m-%d")
-    with open(os.path.join(output_dir, f"{today}.md"), "w") as f:
-        f.write(markdown)
+        # Save markdown report
+        today = datetime.now().strftime("%Y-%m-%d")
+        daily_report_path = os.path.join(output_dir, f"{today}.md")
+        index_report_path = os.path.join(output_dir, "index.md")
+        
+        save_markdown(markdown_report, daily_report_path)
+        save_markdown(markdown_report, index_report_path)
 
-    # Also save as index.md for the latest report
-    with open(os.path.join(output_dir, "index.md"), "w") as f:
-        f.write(markdown)
-
-    # Save raw data as JSON
-    with open(os.path.join(data_dir, f"{today}_data.json"), "w") as f:
-        json.dump({
+        # Save raw data as JSON
+        data_path = os.path.join(data_dir, f"{today}_data.json")
+        save_json({
             "news": news,
             "topics": topics,
             "keywords": keywords,
             "summary": summary,
             "scripts": scripts,
             "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        }, f, indent=2)
+        }, data_path)
 
-    print(f"Daily headlines report generated for {today}")
+        logger.info(f"Daily headlines report generated for {today}")
+        
+    except Exception as e:
+        logger.error(f"Error in main daily headlines process: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

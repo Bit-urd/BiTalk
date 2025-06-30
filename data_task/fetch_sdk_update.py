@@ -8,6 +8,13 @@ import re
 from bs4 import BeautifulSoup
 import markdown
 
+from config import config, logger
+from utils import (
+    retry_on_failure, safe_request, default_cache, default_rate_limiter,
+    ensure_directory, save_json, save_markdown, clean_filename
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_github_releases(repo_owner, repo_name, token=None):
     """
     Fetch releases from GitHub API
@@ -21,17 +28,23 @@ def fetch_github_releases(repo_owner, repo_name, token=None):
         headers["Authorization"] = f"token {token}"
     
     try:
-        response = requests.get(url, headers=headers)
+        response = safe_request(
+            url, 
+            headers=headers, 
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             return response.json()
         else:
-            print(f"Failed to fetch releases for {repo_owner}/{repo_name}: {response.status_code}")
+            logger.error(f"Failed to fetch releases for {repo_owner}/{repo_name}")
             return []
     except Exception as e:
-        print(f"Error fetching releases for {repo_owner}/{repo_name}: {e}")
+        logger.error(f"Error fetching releases for {repo_owner}/{repo_name}: {e}")
         return []
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_github_repo_info(repo_owner, repo_name, token=None):
     """
     Fetch repository information from GitHub API
@@ -45,17 +58,23 @@ def fetch_github_repo_info(repo_owner, repo_name, token=None):
         headers["Authorization"] = f"token {token}"
     
     try:
-        response = requests.get(url, headers=headers)
+        response = safe_request(
+            url,
+            headers=headers,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             return response.json()
         else:
-            print(f"Failed to fetch repo info for {repo_owner}/{repo_name}: {response.status_code}")
+            logger.error(f"Failed to fetch repo info for {repo_owner}/{repo_name}")
             return {}
     except Exception as e:
-        print(f"Error fetching repo info for {repo_owner}/{repo_name}: {e}")
+        logger.error(f"Error fetching repo info for {repo_owner}/{repo_name}: {e}")
         return {}
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_npm_package_info(package_name):
     """
     Fetch package information from NPM registry
@@ -63,17 +82,22 @@ def fetch_npm_package_info(package_name):
     url = f"https://registry.npmjs.org/{package_name}"
     
     try:
-        response = requests.get(url)
+        response = safe_request(
+            url,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             return response.json()
         else:
-            print(f"Failed to fetch NPM info for {package_name}: {response.status_code}")
+            logger.error(f"Failed to fetch NPM info for {package_name}")
             return {}
     except Exception as e:
-        print(f"Error fetching NPM info for {package_name}: {e}")
+        logger.error(f"Error fetching NPM info for {package_name}: {e}")
         return {}
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_pypi_package_info(package_name):
     """
     Fetch package information from PyPI
@@ -81,25 +105,34 @@ def fetch_pypi_package_info(package_name):
     url = f"https://pypi.org/pypi/{package_name}/json"
     
     try:
-        response = requests.get(url)
+        response = safe_request(
+            url,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             return response.json()
         else:
-            print(f"Failed to fetch PyPI info for {package_name}: {response.status_code}")
+            logger.error(f"Failed to fetch PyPI info for {package_name}")
             return {}
     except Exception as e:
-        print(f"Error fetching PyPI info for {package_name}: {e}")
+        logger.error(f"Error fetching PyPI info for {package_name}: {e}")
         return {}
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_documentation_updates(doc_url):
     """
     Fetch documentation updates from a URL
     """
     try:
-        response = requests.get(doc_url)
+        response = safe_request(
+            doc_url,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
         
-        if response.status_code == 200:
+        if response:
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # This is a simplified implementation
@@ -125,13 +158,13 @@ def fetch_documentation_updates(doc_url):
                 "content_sample": content[:500] + "..." if len(content) > 500 else content
             }
         else:
-            print(f"Failed to fetch documentation from {doc_url}: {response.status_code}")
+            logger.error(f"Failed to fetch documentation from {doc_url}")
             return {
                 "url": doc_url,
                 "error": f"HTTP {response.status_code}"
             }
     except Exception as e:
-        print(f"Error fetching documentation from {doc_url}: {e}")
+        logger.error(f"Error fetching documentation from {doc_url}: {e}")
         return {
             "url": doc_url,
             "error": str(e)
@@ -247,16 +280,16 @@ def track_sdk_updates(sdks, output_dir, data_dir):
     Track updates for a list of SDKs
     """
     # Ensure directories exist
-    os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(data_dir, exist_ok=True)
+    ensure_directory(output_dir)
+    ensure_directory(data_dir)
     
-    # GitHub token (optional)
-    github_token = os.environ.get("GITHUB_TOKEN")
+    # GitHub token from config
+    github_token = config.api.github_token
     
     sdk_data = []
     
     for sdk in sdks:
-        print(f"Processing {sdk['name']}...")
+        logger.info(f"Processing {sdk['name']}...")
         
         repo_owner = sdk["repo_owner"]
         repo_name = sdk["repo_name"]
@@ -314,38 +347,41 @@ def track_sdk_updates(sdks, output_dir, data_dir):
         })
         
         # Avoid rate limiting
-        time.sleep(1)
+        time.sleep(config.scraping.request_delay)
     
     # Generate markdown report
     markdown_report = generate_sdk_update_report(sdk_data)
     
     # Save markdown report
-    with open(os.path.join(output_dir, "index.md"), "w") as f:
-        f.write(markdown_report)
+    save_markdown(markdown_report, os.path.join(output_dir, "index.md"))
     
     # Save raw data as JSON
-    with open(os.path.join(data_dir, "sdk_updates.json"), "w") as f:
-        # Convert to serializable format (remove complex objects)
-        serializable_data = []
-        for sdk in sdk_data:
-            serializable_sdk = {
-                "name": sdk["name"],
-                "repo_url": sdk["repo_url"],
-                "latest_version": sdk.get("latest_release", {}).get("tag_name", "N/A"),
-                "latest_release_date": sdk.get("latest_release", {}).get("published_at", "N/A"),
-                "stars": sdk.get("repo_info", {}).get("stargazers_count", "N/A"),
-                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    sdk_data_path = os.path.join(data_dir, "sdk_updates.json")
+    # Convert to serializable format (remove complex objects)
+    serializable_data = []
+    for sdk in sdk_data:
+        serializable_sdk = {
+            "name": sdk["name"],
+            "repo_url": sdk["repo_url"],
+            "latest_version": sdk.get("latest_release", {}).get("tag_name", "N/A"),
+            "latest_release_date": sdk.get("latest_release", {}).get("published_at", "N/A"),
+            "stars": sdk.get("repo_info", {}).get("stargazers_count", "N/A"),
+            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
-            serializable_data.append(serializable_sdk)
+        serializable_data.append(serializable_sdk)
         
-        json.dump(serializable_data, f, indent=2)
+        save_json(serializable_data, sdk_data_path)
     
-    print(f"SDK update report generated with {len(sdk_data)} SDKs")
+    logger.info(f"SDK update report generated with {len(sdk_data)} SDKs")
     return sdk_data
 
 def main():
-    # List of SDKs to track
-    sdks = [
+    """Main function to orchestrate SDK updates"""
+    logger.info("Starting SDK update process")
+    
+    try:
+        # List of SDKs to track
+        sdks = [
         {
             "name": "web3.js",
             "repo_owner": "web3",
@@ -383,12 +419,18 @@ def main():
         }
     ]
     
-    # Output directories
-    output_dir = "content/tools"
-    data_dir = "data/tools"
-    
-    # Track SDK updates
-    track_sdk_updates(sdks, output_dir, data_dir)
+        # Output directories
+        output_dir = os.path.join(config.paths.content_dir, "tools")
+        data_dir = os.path.join(config.paths.data_dir, "tools")
+        
+        # Track SDK updates
+        track_sdk_updates(sdks, output_dir, data_dir)
+        
+        logger.info("SDK update process completed successfully")
+        
+    except Exception as e:
+        logger.error(f"Error in main SDK update process: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

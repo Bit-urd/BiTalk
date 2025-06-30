@@ -5,6 +5,13 @@ import os
 from datetime import datetime
 import json
 
+from config import config, logger
+from utils import (
+    retry_on_failure, ensure_directory, save_json, save_markdown,
+    format_currency, format_percentage
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def load_strategy_data(file_path):
     """
     Load strategy backtest data from CSV or Excel file
@@ -54,6 +61,7 @@ def calculate_performance_metrics(df):
         'win_rate': win_rate
     }
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def generate_performance_chart(df, strategy_name, output_dir):
     """
     Generate performance chart and save as image
@@ -77,12 +85,15 @@ def generate_performance_chart(df, strategy_name, output_dir):
     plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{x:.0f}%'))
     
     # Save figure
+    ensure_directory(output_dir)
     chart_path = os.path.join(output_dir, f"{strategy_name.replace(' ', '_').lower()}_performance.png")
     plt.savefig(chart_path, dpi=300, bbox_inches='tight')
     plt.close()
+    logger.info(f"Generated performance chart: {chart_path}")
     
     return chart_path
 
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def generate_monthly_returns_heatmap(df, strategy_name, output_dir):
     """
     Generate monthly returns heatmap and save as image
@@ -130,9 +141,11 @@ def generate_monthly_returns_heatmap(df, strategy_name, output_dir):
                 pass
     
     # Save figure
+    ensure_directory(output_dir)
     heatmap_path = os.path.join(output_dir, f"{strategy_name.replace(' ', '_').lower()}_monthly_heatmap.png")
     plt.savefig(heatmap_path, dpi=300, bbox_inches='tight')
     plt.close()
+    logger.info(f"Generated monthly heatmap: {heatmap_path}")
     
     return heatmap_path
 
@@ -182,8 +195,8 @@ def generate_markdown(strategy_name, df, metrics, chart_path, heatmap_path, outp
     
     # Save markdown file
     md_file_path = os.path.join(output_dir, f"{strategy_name.replace(' ', '_').lower()}.md")
-    with open(md_file_path, 'w') as f:
-        f.write(markdown)
+    save_markdown(markdown, md_file_path)
+    logger.info(f"Generated strategy report: {md_file_path}")
     
     return md_file_path
 
@@ -209,50 +222,54 @@ def generate_strategy_index(strategies, output_dir):
     
     # Save index file
     index_path = os.path.join(output_dir, "index.md")
-    with open(index_path, 'w') as f:
-        f.write(markdown)
+    save_markdown(markdown, index_path)
+    logger.info(f"Generated strategy index: {index_path}")
     
     return index_path
 
 def main():
-    # Configuration
-    data_dir = "data/strategies"  # Directory with strategy data files
-    output_dir = "content/strategies"  # Directory for output markdown files
-    img_dir = "static/img/strategies"  # Directory for charts
+    """Main function to orchestrate strategy report generation"""
+    logger.info("Starting strategy report generation process")
     
-    # Ensure directories exist
-    os.makedirs(data_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(img_dir, exist_ok=True)
+    try:
+        # Configuration
+        data_dir = os.path.join(config.paths.data_dir, "strategies")
+        output_dir = os.path.join(config.paths.content_dir, "strategies")
+        img_dir = os.path.join(config.paths.static_dir, "img", "strategies")
+        
+        # Ensure directories exist
+        ensure_directory(data_dir)
+        ensure_directory(output_dir)
+        ensure_directory(img_dir)
     
-    # List of strategies to process
-    strategies = []
+        # List of strategies to process
+        strategies = []
     
-    # Example strategy data (in real use, you would load from files)
-    # For demonstration, we'll create a sample dataframe
-    dates = pd.date_range(start='2022-01-01', end='2023-01-01')
-    np.random.seed(42)  # For reproducibility
+        # Example strategy data (in real use, you would load from files)
+        # For demonstration, we'll create a sample dataframe
+        dates = pd.date_range(start='2022-01-01', end='2023-01-01')
+        np.random.seed(42)  # For reproducibility
     
-    # Strategy 1: Momentum
-    momentum_returns = np.random.normal(0.001, 0.01, len(dates))
-    momentum_df = pd.DataFrame({
-        'date': dates,
-        'returns': momentum_returns,
-        'cumulative_returns': (1 + pd.Series(momentum_returns)).cumprod() - 1
-    })
+        # Strategy 1: Momentum
+        momentum_returns = np.random.normal(0.001, 0.01, len(dates))
+        momentum_df = pd.DataFrame({
+            'date': dates,
+            'returns': momentum_returns,
+            'cumulative_returns': (1 + pd.Series(momentum_returns)).cumprod() - 1
+        })
     
-    # Strategy 2: Mean Reversion
-    mean_rev_returns = np.random.normal(0.0008, 0.008, len(dates))
-    mean_rev_df = pd.DataFrame({
-        'date': dates,
-        'returns': mean_rev_returns,
-        'cumulative_returns': (1 + pd.Series(mean_rev_returns)).cumprod() - 1
-    })
+        # Strategy 2: Mean Reversion
+        mean_rev_returns = np.random.normal(0.0008, 0.008, len(dates))
+        mean_rev_df = pd.DataFrame({
+            'date': dates,
+            'returns': mean_rev_returns,
+            'cumulative_returns': (1 + pd.Series(mean_rev_returns)).cumprod() - 1
+        })
     
     # Process each strategy
     for strategy_name, df in [("Momentum Strategy", momentum_df), 
                              ("Mean Reversion Strategy", mean_rev_df)]:
-        print(f"Processing {strategy_name}...")
+        logger.info(f"Processing {strategy_name}...")
         
         # Calculate metrics
         metrics = calculate_performance_metrics(df)
@@ -271,18 +288,23 @@ def main():
             'md_path': md_path
         })
         
-        print(f"Generated report for {strategy_name}")
+        logger.info(f"Generated report for {strategy_name}")
     
-    # Generate index page
-    index_path = generate_strategy_index(strategies, output_dir)
-    print(f"Generated strategy index at {index_path}")
-    
-    # Save strategy data as JSON for future reference
-    with open(os.path.join(data_dir, "strategy_metrics.json"), 'w') as f:
-        json.dump([{
+        # Generate index page
+        index_path = generate_strategy_index(strategies, output_dir)
+        
+        # Save strategy data as JSON for future reference
+        strategy_metrics_path = os.path.join(data_dir, "strategy_metrics.json")
+        save_json([{
             'name': s['name'],
             'metrics': s['metrics']
-        } for s in strategies], f, indent=2, default=str)
+        } for s in strategies], strategy_metrics_path)
+        
+        logger.info(f"Strategy report generation completed. Generated {len(strategies)} strategy reports")
+        
+    except Exception as e:
+        logger.error(f"Error in main strategy generation process: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

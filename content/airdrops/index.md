@@ -1,159 +1,126 @@
----
-title: "空投聚合-最新撸毛动态"
-date: 2025-06-23
-description: "定期聚合最新空投信息，包含项目分析、参与条件、操作教程等"
-lastmod: '2025-06-26'
-tags: ["空投", "DeFi", "Web3"]
-menu:
-    main: 
-        weight: -98
-        params:
-            icon: gift
----
+# Airdrop Projects Tracker
 
-# 🎁 空投信息聚合
+*Generated on: 2025-06-30 13:29:02*
 
-欢迎来到哈希说空投聚合页面！我们为您精心收集和分析最新的Web3空投机会，帮助您不错过任何有价值的项目。
+## Upcoming Airdrop Projects
 
-## 📊 空投状态说明
+| Project | Category | Expected Airdrop | Twitter | Tasks |
+|---------|----------|------------------|---------|-------|
+| [LayerZero](#layerzero) | Cross-chain | Q1 2024 | [@LayerZero_Labs](https://twitter.com/LayerZero_Labs) | Bridge assets, Use supported dApps, ... |
+| [ZKSync](#zksync) | Layer 2 | TBA | [@zksync](https://twitter.com/zksync) | Bridge to ZKSync, Use ZKSync dApps, ... |
+| [Starknet](#starknet) | Layer 2 | TBA | [@StarkNetEco](https://twitter.com/StarkNetEco) | Deploy contracts, Use Starknet dApps, ... |
+| [Scroll](#scroll) | Layer 2 | 2024 | [@Scroll_ZKP](https://twitter.com/Scroll_ZKP) | Bridge to Scroll, Use Scroll dApps, ... |
+| [Linea](#linea) | Layer 2 | TBA | [@LineaBuild](https://twitter.com/LineaBuild) | Bridge to Linea, Use Linea dApps, ... |
 
-- 🟢 **进行中** - 当前可以参与的空投活动
-- 🟡 **即将开始** - 预计近期开始的空投项目  
-- 🔴 **已结束** - 已经结束快照或分发的项目
-- ⚪ **待确认** - 项目方尚未正式确认的潜在空投
+## Airdrop Task Calendar
 
----
+| Date | Project | Task | Link |
+|------|---------|------|------|
+| 2025-06-30 | LayerZero | Complete LayerZero tasks | [Complete Tasks](https://zealy.io/c/layerzero/questboard) |
+| 2025-07-01 | ZKSync | Complete ZKSync tasks | [Complete Tasks](https://zealy.io/c/zksync/questboard) |
+| 2025-07-02 | Starknet | Complete Starknet tasks | [Complete Tasks](https://zealy.io/c/starknet/questboard) |
+| 2025-07-03 | Scroll | Complete Scroll tasks | [Complete Tasks](https://zealy.io/c/scroll/questboard) |
+| 2025-07-04 | Linea | Complete Linea tasks | [Complete Tasks](https://zealy.io/c/linea/questboard) |
 
-## 🔥 热门空投项目
+## Project Details
 
-### 🟢 LayerZero (ZRO)
-**状态**: 进行中 | **截止时间**: 2025-07-15 | **预估价值**: $500-2000
+### LayerZero
 
-LayerZero是全链互操作性协议，连接不同区块链网络。
+**Category:** Cross-chain
 
-**参与条件**:
-- 使用Stargate进行跨链桥接
-- 在支持的链上进行交互
-- 最低交互金额: $100
+**Description:** Omnichain interoperability protocol
 
-**快速参与**: [教程链接](/airdrops/2025-06-23-layerzero/)
+**Expected Airdrop:** Q1 2024
 
----
+**Twitter:** [@LayerZero_Labs](https://twitter.com/LayerZero_Labs) (N/A followers)
 
-### 🟡 zkSync Era 生态
-**状态**: 即将开始 | **预计时间**: 2025-07-01 | **预估价值**: $300-1500
+**Required Tasks:**
 
-zkSync Era是以太坊Layer 2扩容解决方案，采用零知识证明技术。
+- Bridge assets
+- Use supported dApps
+- Participate in Zealy quests
 
-**参与条件**:
-- 在zkSync Era上进行交易
-- 使用生态内DeFi协议
-- 持有NFT或参与治理
-
-**准备工作**: 
-- 桥接资产到zkSync Era
-- 体验SyncSwap、Mute等DeFi协议
+**Next Task Deadline:** 2025-06-30
 
 ---
 
-### 🟢 Scroll
-**状态**: 进行中 | **截止时间**: 2025-08-01 | **预估价值**: $200-800
+### ZKSync
 
-Scroll是基于zkEVM的以太坊Layer 2解决方案。
+**Category:** Layer 2
 
-**参与条件**:
-- 桥接资产到Scroll网络
-- 在Scroll上进行DeFi交互
-- 参与测试网活动
+**Description:** Zero-knowledge rollup scaling solution
 
-**推荐操作**:
-- 使用官方桥接器
-- 在Ambient、Zebra等协议上提供流动性
+**Expected Airdrop:** TBA
 
----
+**Twitter:** [@zksync](https://twitter.com/zksync) (N/A followers)
 
-### 🟡 Blast
-**状态**: 即将开始 | **预计时间**: 2025-07-10 | **预估价值**: $400-1200
+**Required Tasks:**
 
-Blast是原生收益的以太坊Layer 2，为ETH和稳定币提供自动收益。
+- Bridge to ZKSync
+- Use ZKSync dApps
+- Complete Galxe campaigns
 
-**参与条件**:
-- 桥接ETH/USDB到Blast
-- 邀请朋友获得积分加成
-- 参与生态项目
-
-**注意事项**: 
-- 资金锁定期较长
-- 需要邀请码才能参与
+**Next Task Deadline:** 2025-07-01
 
 ---
 
-## 🎯 参与策略建议
+### Starknet
 
-### 💡 新手策略
-1. **从小额开始**: 每个项目投入$50-200测试
-2. **分散风险**: 不要把所有资金投入单一项目
-3. **学习为主**: 重点学习DeFi操作和钱包使用
+**Category:** Layer 2
 
-### 🚀 进阶策略
-1. **早期参与**: 关注项目测试网阶段
-2. **深度交互**: 不只是简单转账，要使用核心功能
-3. **社区参与**: 加入Discord、参与治理投票
+**Description:** Permissionless validity-rollup
 
-### ⚠️ 风险提醒
-- **智能合约风险**: 新项目可能存在漏洞
-- **资金安全**: 使用专门的交互钱包，不要放入大额资金
-- **假项目风险**: 验证官方链接，警惕钓鱼网站
+**Expected Airdrop:** TBA
 
----
+**Twitter:** [@StarkNetEco](https://twitter.com/StarkNetEco) (N/A followers)
 
-## 📅 空投日历
+**Required Tasks:**
 
-| 项目 | 状态 | 重要时间节点 | 操作建议 |
-|------|------|-------------|----------|
-| LayerZero | 🟢 进行中 | 7月15日快照 | 立即参与跨链操作 |
-| zkSync Era | 🟡 即将开始 | 7月1日开始 | 准备资金，关注公告 |
-| Scroll | 🟢 进行中 | 8月1日截止 | 持续交互，增加权重 |
-| Blast | 🟡 即将开始 | 7月10日开始 | 获取邀请码 |
+- Deploy contracts
+- Use Starknet dApps
+- Participate in community
+
+**Next Task Deadline:** 2025-07-02
 
 ---
 
-## 🔗 实用工具
+### Scroll
 
-### 空投追踪工具
-- [DeFiLlama Airdrops](https://defillama.com/airdrops) - 空投项目追踪
-- [Airdrops.io](https://airdrops.io) - 综合空投信息
-- [CoinMarketCap Airdrops](https://coinmarketcap.com/airdrops/) - 官方空投列表
+**Category:** Layer 2
 
-### 钱包推荐
-- **MetaMask** - 最通用的以太坊钱包
-- **Rabby** - 多链DeFi专用钱包
-- **OKX Wallet** - 支持多链的综合钱包
+**Description:** zkEVM-based Layer 2 solution
 
-### 安全工具
-- [Revoke.cash](https://revoke.cash) - 撤销代币授权
-- [Pocket Universe](https://pocketuniverse.app) - 交易安全检查
-- [Scam Sniffer](https://scamsniffer.io) - 钓鱼网站检测
+**Expected Airdrop:** 2024
 
----
+**Twitter:** [@Scroll_ZKP](https://twitter.com/Scroll_ZKP) (N/A followers)
 
-## 📢 订阅更新
+**Required Tasks:**
 
-想要第一时间获得最新空投信息？
+- Bridge to Scroll
+- Use Scroll dApps
+- Complete testnet tasks
 
-- 🐦 关注我们的 [Twitter](https://twitter.com/hashtalk_web3)
-- 📱 加入 [Telegram群组](https://t.me/hashtalk_web3)
-- 📧 订阅 [邮件通知](/subscribe/)
+**Next Task Deadline:** 2025-07-03
 
 ---
 
-## ⚖️ 免责声明
+### Linea
 
-本页面提供的信息仅供参考，不构成投资建议。参与任何空投活动前，请：
+**Category:** Layer 2
 
-1. 自行研究项目背景和风险
-2. 确认官方信息的真实性
-3. 合理控制参与资金规模
-4. 了解相关法律法规要求
+**Description:** Consensys zkEVM rollup
 
-投资有风险，参与需谨慎。哈希说不对任何投资损失承担责任。
+**Expected Airdrop:** TBA
+
+**Twitter:** [@LineaBuild](https://twitter.com/LineaBuild) (N/A followers)
+
+**Required Tasks:**
+
+- Bridge to Linea
+- Use Linea dApps
+- Complete Galxe campaigns
+
+**Next Task Deadline:** 2025-07-04
+
+---
+

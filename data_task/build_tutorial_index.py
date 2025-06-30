@@ -8,6 +8,13 @@ from datetime import datetime
 import yaml
 import shutil
 
+from config import config, logger
+from utils import (
+    retry_on_failure, ensure_directory, save_json, save_markdown,
+    clean_filename, truncate_text
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def scan_tutorials(tutorials_dir):
     """
     Scan the tutorials directory to find all tutorial files
@@ -50,7 +57,7 @@ def extract_metadata_from_markdown(file_path):
             
             return metadata
         except Exception as e:
-            print(f"Error parsing frontmatter in {file_path}: {e}")
+            logger.error(f"Error parsing frontmatter in {file_path}: {e}")
     
     # If no frontmatter or error, return basic metadata
     return {
@@ -107,7 +114,7 @@ def extract_metadata_from_jupyter(file_path):
             "type": "jupyter"
         }
     except Exception as e:
-        print(f"Error processing Jupyter notebook {file_path}: {e}")
+        logger.error(f"Error processing Jupyter notebook {file_path}: {e}")
         return {
             "title": os.path.basename(file_path).replace(".ipynb", "").replace("_", " ").title(),
             "date": datetime.now().strftime("%Y-%m-%d"),
@@ -174,10 +181,10 @@ def convert_jupyter_to_markdown(notebook_path, output_dir):
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(hugo_markdown)
         
-        print(f"Converted {notebook_path} to {output_path}")
+        logger.info(f"Converted {notebook_path} to {output_path}")
         return output_path
     except Exception as e:
-        print(f"Error converting notebook {notebook_path}: {e}")
+        logger.error(f"Error converting notebook {notebook_path}: {e}")
         return None
 
 def categorize_tutorials(tutorials):
@@ -287,7 +294,7 @@ Welcome to our comprehensive tutorial collection. Browse by category or explore 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(markdown)
     
-    print(f"Generated index page at {output_path}")
+    logger.info(f"Generated index page at {output_path}")
     return output_path
 
 def process_tutorials(tutorials_dir, output_dir):
@@ -295,7 +302,7 @@ def process_tutorials(tutorials_dir, output_dir):
     Process all tutorials and generate index
     """
     # Ensure output directory exists
-    os.makedirs(output_dir, exist_ok=True)
+    ensure_directory(output_dir)
     
     # Scan for tutorials
     tutorial_files = scan_tutorials(tutorials_dir)
@@ -310,7 +317,7 @@ def process_tutorials(tutorials_dir, output_dir):
         if tutorials_dir != output_dir:
             rel_path = os.path.relpath(md_file, tutorials_dir)
             dest_path = os.path.join(output_dir, rel_path)
-            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+            ensure_directory(os.path.dirname(dest_path))
             shutil.copy2(md_file, dest_path)
             
             # Update the path in metadata
@@ -335,8 +342,7 @@ def process_tutorials(tutorials_dir, output_dir):
     
     # Save metadata for all tutorials
     metadata_path = os.path.join(output_dir, "tutorials_metadata.json")
-    with open(metadata_path, 'w', encoding='utf-8') as f:
-        json.dump(all_tutorials, f, indent=2)
+    save_json(all_tutorials, metadata_path)
     
     return {
         "total_tutorials": len(all_tutorials),
@@ -347,19 +353,27 @@ def process_tutorials(tutorials_dir, output_dir):
     }
 
 def main():
-    # Configuration
-    tutorials_dir = "content/tutorials"  # Source directory with tutorials
-    output_dir = "content/tutorials"     # Output directory (same as source in this case)
+    """Main function to orchestrate tutorial indexing"""
+    logger.info("Starting tutorial indexing process")
     
-    # Process tutorials
-    print(f"Processing tutorials from {tutorials_dir}...")
-    result = process_tutorials(tutorials_dir, output_dir)
-    
-    print(f"Processed {result['total_tutorials']} tutorials:")
-    print(f"- {result['markdown_tutorials']} markdown tutorials")
-    print(f"- {result['jupyter_tutorials']} Jupyter notebooks converted to markdown")
-    print(f"Generated index page at {result['index_path']}")
-    print(f"Saved metadata to {result['metadata_path']}")
+    try:
+        # Configuration
+        tutorials_dir = os.path.join(config.paths.content_dir, "tutorials")
+        output_dir = os.path.join(config.paths.content_dir, "tutorials")
+        
+        # Process tutorials
+        logger.info(f"Processing tutorials from {tutorials_dir}...")
+        result = process_tutorials(tutorials_dir, output_dir)
+        
+        logger.info(f"Processed {result['total_tutorials']} tutorials:")
+        logger.info(f"- {result['markdown_tutorials']} markdown tutorials")
+        logger.info(f"- {result['jupyter_tutorials']} Jupyter notebooks converted to markdown")
+        logger.info(f"Generated index page at {result['index_path']}")
+        logger.info(f"Saved metadata to {result['metadata_path']}")
+        
+    except Exception as e:
+        logger.error(f"Error in main tutorial indexing process: {e}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
     main()

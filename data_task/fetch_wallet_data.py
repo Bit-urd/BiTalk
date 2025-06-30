@@ -1,27 +1,86 @@
+import os
 import requests
 import pandas as pd
 import json
 import time
 from datetime import datetime
+import logging
 
+from config import config, logger
+from utils import (
+    retry_on_failure, safe_request, default_cache, default_rate_limiter,
+    ensure_directory, save_json, save_markdown, format_currency, 
+    validate_address
+)
+
+@retry_on_failure(max_retries=config.scraping.max_retries)
 def fetch_debank_wallet_data(address):
     """
     Fetch wallet data from Debank API
     """
-    # Fetch token list
-    token_url = f"https://openapi.debank.com/v1/user/token_list?id={address}&is_all=true"
-    token_response = requests.get(token_url)
-    tokens = token_response.json()
+    if not validate_address(address):
+        logger.error(f"Invalid address format: {address}")
+        return None
     
-    # Fetch protocol list (DeFi positions)
-    protocol_url = f"https://openapi.debank.com/v1/user/complex_protocol_list?id={address}"
-    protocol_response = requests.get(protocol_url)
-    protocols = protocol_response.json()
+    cache_key = f"debank_wallet_{address}"
+    cached_data = default_cache.get(cache_key)
+    if cached_data:
+        logger.debug(f"Using cached DeBank data for {address}")
+        return cached_data
     
-    return {
-        "tokens": tokens,
-        "protocols": protocols
-    }
+    try:
+        headers = {"User-Agent": config.scraping.user_agent}
+        
+        # Fetch token list
+        token_url = f"https://openapi.debank.com/v1/user/token_list"
+        token_params = {"id": address, "is_all": "true"}
+        
+        token_response = safe_request(
+            token_url, 
+            headers=headers, 
+            params=token_params,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
+        
+        if not token_response:
+            logger.error(f"Failed to fetch token data for {address}")
+            return None
+        
+        tokens = token_response.json()
+        
+        # Add delay to respect rate limits
+        time.sleep(config.scraping.request_delay)
+        
+        # Fetch protocol list (DeFi positions)
+        protocol_url = f"https://openapi.debank.com/v1/user/complex_protocol_list"
+        protocol_params = {"id": address}
+        
+        protocol_response = safe_request(
+            protocol_url,
+            headers=headers,
+            params=protocol_params,
+            timeout=config.scraping.timeout,
+            rate_limiter=default_rate_limiter
+        )
+        
+        protocols = protocol_response.json() if protocol_response else []
+        
+        result = {
+            "address": address,
+            "tokens": tokens,
+            "protocols": protocols,
+            "fetched_at": datetime.now().isoformat()
+        }
+        
+        # Cache the result
+        default_cache.set(cache_key, result)
+        logger.info(f"Successfully fetched DeBank data for {address}")
+        return result
+        
+    except Exception as e:
+        logger.error(f"Error fetching DeBank data for {address}: {e}")
+        return None
 
 def fetch_covalent_transactions(address, chain_id=1):
     """
@@ -130,37 +189,75 @@ def save_data(address, wallet_data, stats, markdown):
         f.write(markdown)
 
 def main():
-    # List of whale addresses to track
-    whale_addresses = [
-        "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",  # Example whale address
-        "0x28c6c06298d514db089934071355e5743bf21d60",  # Binance 14
-        "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8"   # Binance 7
-    ]
+    """Main function to orchestrate whale wallet tracking"""
+    logger.info("Starting whale wallet tracking process")
     
-    for address in whale_addresses:
-        print(f"Fetching data for {address}...")
+    try:
+        # Create directories
+        wallets_data_dir = os.path.join(config.paths.data_dir, "wallets")
+        wallets_content_dir = os.path.join(config.paths.content_dir, "wallets")
         
-        # Fetch data
-        wallet_data = fetch_debank_wallet_data(address)
+        ensure_directory(wallets_data_dir)
+        ensure_directory(wallets_content_dir)
         
-        # Calculate stats
-        stats = calculate_wallet_stats(wallet_data)
+        # List of whale addresses to track
+        whale_addresses = [
+            "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",  # Example whale address
+            "0x28c6c06298d514db089934071355e5743bf21d60",  # Binance 14
+            "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8"   # Binance 7
+        ]
         
-        # Generate markdown
-        markdown = generate_markdown_report(address, wallet_data, stats)
+        successful_addresses = []
+        failed_addresses = []
         
-        # Save data
-        try:
-            save_data(address, wallet_data, stats, markdown)
-            print(f"Data for {address} saved successfully")
-        except Exception as e:
-            print(f"Error saving data for {address}: {e}")
+        for address in whale_addresses:
+            logger.info(f"Processing wallet {address}...")
+            
+            try:
+                # Validate address
+                if not validate_address(address):
+                    logger.error(f"Invalid address format: {address}")
+                    failed_addresses.append(address)
+                    continue
+                
+                # Fetch data
+                wallet_data = fetch_debank_wallet_data(address)
+                
+                if not wallet_data:
+                    logger.warning(f"No data fetched for {address}")
+                    failed_addresses.append(address)
+                    continue
+                
+                # Calculate stats
+                stats = calculate_wallet_stats(wallet_data)
+                
+                # Generate markdown
+                markdown = generate_markdown_report(address, wallet_data, stats)
+                
+                # Save data
+                save_data(address, wallet_data, stats, markdown)
+                successful_addresses.append(address)
+                logger.info(f"Successfully processed wallet {address}")
+                
+            except Exception as e:
+                logger.error(f"Error processing wallet {address}: {e}", exc_info=True)
+                failed_addresses.append(address)
+            
+            # Rate limiting delay
+            time.sleep(config.scraping.request_delay)
         
-        # Avoid rate limiting
-        time.sleep(2)
-    
-    # Generate summary report of all whales
-    generate_whale_summary(whale_addresses)
+        # Generate summary report of all successful wallets
+        if successful_addresses:
+            generate_whale_summary(successful_addresses)
+            
+        # Log summary
+        logger.info(f"Wallet tracking complete. Success: {len(successful_addresses)}, Failed: {len(failed_addresses)}")
+        if failed_addresses:
+            logger.warning(f"Failed addresses: {failed_addresses}")
+            
+    except Exception as e:
+        logger.error(f"Error in main wallet tracking process: {e}", exc_info=True)
+        raise
 
 def generate_whale_summary(addresses):
     """

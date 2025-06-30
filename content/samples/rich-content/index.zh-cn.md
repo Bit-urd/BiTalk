@@ -33,4 +33,4 @@ Hugo 附带了几个用于丰富内容的[内置简码](https://gohugo.io/conten
 
 `vimeo_simple` 简码将生成一个嵌入式的 Vimeo 播放器。
 
-{{< vimeo_simple 48912912 >}}
+<!-- {{< vimeo_simple 48912912 >}} -->
