@@ -1,0 +1,87 @@
+[
+  {
+    "name": "LayerZero",
+    "twitter": "LayerZero_Labs",
+    "zealy": "layerzero",
+    "galxe": "LayerZero",
+    "category": "Cross-chain",
+    "description": "Omnichain interoperability protocol",
+    "expected_airdrop": "Q1 2024",
+    "tasks": [
+      "Bridge assets",
+      "Use supported dApps",
+      "Participate in Zealy quests"
+    ],
+    "galxe_info": null,
+    "has_twitter_data": true,
+    "has_zealy_data": true
+  },
+  {
+    "name": "ZKSync",
+    "twitter": "zksync",
+    "zealy": "zksync",
+    "galxe": "ZKSync",
+    "category": "Layer 2",
+    "description": "Zero-knowledge rollup scaling solution",
+    "expected_airdrop": "TBA",
+    "tasks": [
+      "Bridge to ZKSync",
+      "Use ZKSync dApps",
+      "Complete Galxe campaigns"
+    ],
+    "galxe_info": null,
+    "has_twitter_data": true,
+    "has_zealy_data": true
+  },
+  {
+    "name": "Starknet",
+    "twitter": "StarkNetEco",
+    "zealy": "starknet",
+    "galxe": "Starknet",
+    "category": "Layer 2",
+    "description": "Permissionless validity-rollup",
+    "expected_airdrop": "TBA",
+    "tasks": [
+      "Deploy contracts",
+      "Use Starknet dApps",
+      "Participate in community"
+    ],
+    "galxe_info": null,
+    "has_twitter_data": true,
+    "has_zealy_data": true
+  },
+  {
+    "name": "Scroll",
+    "twitter": "Scroll_ZKP",
+    "zealy": "scroll",
+    "galxe": "Scroll",
+    "category": "Layer 2",
+    "description": "zkEVM-based Layer 2 solution",
+    "expected_airdrop": "2024",
+    "tasks": [
+      "Bridge to Scroll",
+      "Use Scroll dApps",
+      "Complete testnet tasks"
+    ],
+    "galxe_info": null,
+    "has_twitter_data": true,
+    "has_zealy_data": true
+  },
+  {
+    "name": "Linea",
+    "twitter": "LineaBuild",
+    "zealy": "linea",
+    "galxe": "Linea",
+    "category": "Layer 2",
+    "description": "Consensys zkEVM rollup",
+    "expected_airdrop": "TBA",
+    "tasks": [
+      "Bridge to Linea",
+      "Use Linea dApps",
+      "Complete Galxe campaigns"
+    ],
+    "galxe_info": null,
+    "has_twitter_data": true,
+    "has_zealy_data": true
+  }
+]

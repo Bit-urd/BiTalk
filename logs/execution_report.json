@@ -1,0 +1,57 @@
+{
+  "execution_time": "2025-06-30T13:29:11.719722",
+  "total_tasks": 7,
+  "successful_tasks": 3,
+  "failed_tasks": 4,
+  "results": [
+    {
+      "task": "airdrops",
+      "status": "success",
+      "duration": 43.013359,
+      "start_time": "2025-06-30T13:28:19.628222",
+      "end_time": "2025-06-30T13:29:02.641581"
+    },
+    {
+      "task": "wallets",
+      "status": "success",
+      "duration": 2.64888,
+      "start_time": "2025-06-30T13:29:02.642050",
+      "end_time": "2025-06-30T13:29:05.290930"
+    },
+    {
+      "task": "rankings",
+      "status": "failed",
+      "error": "No module named 'matplotlib'",
+      "start_time": "2025-06-30T13:29:05.291218",
+      "end_time": "2025-06-30T13:29:05.311109"
+    },
+    {
+      "task": "headlines",
+      "status": "success",
+      "duration": 4.045619,
+      "start_time": "2025-06-30T13:29:05.311414",
+      "end_time": "2025-06-30T13:29:09.357033"
+    },
+    {
+      "task": "strategies",
+      "status": "failed",
+      "error": "expected 'except' or 'finally' block (generate_strategy_md.py, line 250)",
+      "start_time": "2025-06-30T13:29:09.357211",
+      "end_time": "2025-06-30T13:29:09.361200"
+    },
+    {
+      "task": "sdk",
+      "status": "failed",
+      "error": "unexpected indent (fetch_sdk_update.py, line 371)",
+      "start_time": "2025-06-30T13:29:09.361268",
+      "end_time": "2025-06-30T13:29:09.365618"
+    },
+    {
+      "task": "tutorials",
+      "status": "failed",
+      "error": "No module named 'yaml'",
+      "start_time": "2025-06-30T13:29:09.365685",
+      "end_time": "2025-06-30T13:29:11.719692"
+    }
+  ]
+}

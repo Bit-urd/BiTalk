@@ -1,0 +1,440 @@
+2025-06-30 13:22:33,808 - data_task - INFO - 未指定任务，将执行所有可用任务
+2025-06-30 13:22:33,808 - data_task - INFO - 准备执行任务: airdrops, wallets, rankings, headlines, strategies, sdk, tutorials
+2025-06-30 13:22:33,809 - data_task - INFO - 顺序执行任务
+2025-06-30 13:22:33,809 - data_task - INFO - 开始执行任务: airdrops
+2025-06-30 13:22:34,308 - data_task - INFO - Starting airdrop data collection process
+2025-06-30 13:22:34,308 - data_task - INFO - Fetching airdrop projects...
+2025-06-30 13:22:34,308 - data_task - INFO - Enriching data for 5 projects...
+2025-06-30 13:22:35,974 - data_task - INFO - Successfully fetched Twitter info for LayerZero_Labs
+2025-06-30 13:22:45,645 - data_task.utils - ERROR - Request failed for https://nitter.net/zksync: 429 Client Error: Too Many Requests for url: https://nitter.net/zksync
+2025-06-30 13:22:46,872 - data_task - INFO - Successfully fetched Twitter info for zksync
+2025-06-30 13:22:55,417 - data_task.utils - ERROR - Request failed for https://nitter.net/StarkNetEco: 429 Client Error: Too Many Requests for url: https://nitter.net/StarkNetEco
+2025-06-30 13:22:56,521 - data_task - INFO - Successfully fetched Twitter info for StarkNetEco
+2025-06-30 13:23:04,753 - data_task.utils - ERROR - Request failed for https://nitter.net/Scroll_ZKP: 429 Client Error: Too Many Requests for url: https://nitter.net/Scroll_ZKP
+2025-06-30 13:23:05,844 - data_task - INFO - Successfully fetched Twitter info for Scroll_ZKP
+2025-06-30 13:23:15,636 - data_task - INFO - Successfully fetched Twitter info for LineaBuild
+2025-06-30 13:23:22,475 - data_task - INFO - Generating airdrop calendar...
+2025-06-30 13:23:22,477 - data_task - INFO - Generating markdown report...
+2025-06-30 13:23:22,480 - data_task.utils - INFO - Saved markdown to content/airdrops/index.md
+2025-06-30 13:23:22,481 - data_task.utils - INFO - Saved JSON data to data/airdrops/projects.json
+2025-06-30 13:23:22,483 - data_task.utils - INFO - Saved JSON data to data/airdrops/calendar.json
+2025-06-30 13:23:22,483 - data_task - INFO - Airdrop data processing complete! Processed 5 projects
+2025-06-30 13:23:22,483 - data_task.utils - INFO - Saved JSON data to data/airdrops/stats.json
+2025-06-30 13:23:22,484 - data_task - INFO - Statistics: {'total_projects': 5, 'projects_with_twitter': 5, 'projects_with_zealy': 5, 'projects_with_galxe': 0, 'last_updated': '2025-06-30T13:23:22.483504'}
+2025-06-30 13:23:22,485 - data_task - INFO - 任务 airdrops 执行成功，耗时 48.7 秒
+2025-06-30 13:23:22,485 - data_task - INFO - 开始执行任务: wallets
+2025-06-30 13:23:22,494 - data_task - INFO - Starting whale wallet tracking process
+2025-06-30 13:23:22,494 - data_task - ERROR - Error in main wallet tracking process: name 'os' is not defined
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/fetch_wallet_data.py", line 196, in main
+    wallets_data_dir = os.path.join(config.paths.data_dir, "wallets")
+                       ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-06-30 13:23:22,498 - data_task - ERROR - 任务 wallets 执行失败: name 'os' is not defined
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 59, in run_wallet_tasks
+    fetch_wallets()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/fetch_wallet_data.py", line 196, in main
+    wallets_data_dir = os.path.join(config.paths.data_dir, "wallets")
+                       ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-06-30 13:23:22,499 - data_task - INFO - 开始执行任务: rankings
+2025-06-30 13:23:22,508 - data_task - ERROR - 任务 rankings 执行失败: expected 'except' or 'finally' block (update_tool_rankings.py, line 469)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 63, in run_tool_ranking_tasks
+    from update_tool_rankings import main as update_rankings
+  File "/Users/admin/workspace/BiTalk/data_task/update_tool_rankings.py", line 469
+    historical_data_path = os.path.join(data_dir, "historical_rankings.json")
+    ^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-06-30 13:23:22,509 - data_task - INFO - 开始执行任务: headlines
+2025-06-30 13:23:23,007 - data_task - INFO - Starting daily headlines generation process
+2025-06-30 13:23:23,008 - data_task - INFO - Fetching latest crypto news...
+2025-06-30 13:23:23,008 - data_task - INFO - Fetching trending topics...
+2025-06-30 13:23:23,008 - data_task - INFO - Extracting keywords...
+2025-06-30 13:23:23,008 - data_task - INFO - Generating news summary...
+2025-06-30 13:23:23,008 - data_task - ERROR - Error generating summary with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:23:23,008 - data_task - INFO - Generating content scripts...
+2025-06-30 13:23:23,008 - data_task - INFO - Generating script for Bitcoin ETF...
+2025-06-30 13:23:23,008 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:23:24,014 - data_task - INFO - Generating script for Ethereum Layer 2...
+2025-06-30 13:23:24,015 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:23:25,016 - data_task - INFO - Generating script for DeFi Yield Farming...
+2025-06-30 13:23:25,017 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:23:26,023 - data_task - INFO - Generating markdown report...
+2025-06-30 13:23:26,029 - data_task.utils - INFO - Saved markdown to content/daily/2025-06-30.md
+2025-06-30 13:23:26,030 - data_task.utils - INFO - Saved markdown to content/daily/index.md
+2025-06-30 13:23:26,031 - data_task.utils - INFO - Saved JSON data to data/daily/2025-06-30_data.json
+2025-06-30 13:23:26,032 - data_task - INFO - Daily headlines report generated for 2025-06-30
+2025-06-30 13:23:26,032 - data_task - INFO - 任务 headlines 执行成功，耗时 3.5 秒
+2025-06-30 13:23:26,032 - data_task - INFO - 开始执行任务: strategies
+2025-06-30 13:23:26,040 - data_task - ERROR - 任务 strategies 执行失败: expected 'except' or 'finally' block (generate_strategy_md.py, line 246)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 73, in run_strategy_tasks
+    from generate_strategy_md import main as gen_strategies
+  File "/Users/admin/workspace/BiTalk/data_task/generate_strategy_md.py", line 246
+    strategies = []
+    ^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-06-30 13:23:26,041 - data_task - INFO - 开始执行任务: sdk
+2025-06-30 13:23:26,049 - data_task - ERROR - 任务 sdk 执行失败: unexpected indent (fetch_sdk_update.py, line 361)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 78, in run_sdk_update_tasks
+    from fetch_sdk_update import main as fetch_sdk_updates
+  File "/Users/admin/workspace/BiTalk/data_task/fetch_sdk_update.py", line 361
+    serializable_data = []
+IndentationError: unexpected indent
+2025-06-30 13:23:26,050 - data_task - INFO - 开始执行任务: tutorials
+2025-06-30 13:23:26,056 - data_task - ERROR - 任务 tutorials 执行失败: No module named 'nbformat'
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 83, in run_tutorial_tasks
+    from build_tutorial_index import main as build_tutorials
+  File "/Users/admin/workspace/BiTalk/data_task/build_tutorial_index.py", line 5, in <module>
+    import nbformat
+ModuleNotFoundError: No module named 'nbformat'
+2025-06-30 13:23:26,057 - data_task.utils - INFO - Saved JSON data to logs/execution_report.json
+2025-06-30 13:23:26,057 - data_task - INFO - 执行报告已保存到: logs/execution_report.json
+2025-06-30 13:23:26,057 - data_task - INFO - 任务摘要: 总计 7, 成功 2, 失败 5
+2025-06-30 13:23:26,058 - data_task - WARNING - 失败的任务:
+2025-06-30 13:23:26,058 - data_task - WARNING -   - wallets: name 'os' is not defined
+2025-06-30 13:23:26,058 - data_task - WARNING -   - rankings: expected 'except' or 'finally' block (update_tool_rankings.py, line 469)
+2025-06-30 13:23:26,058 - data_task - WARNING -   - strategies: expected 'except' or 'finally' block (generate_strategy_md.py, line 246)
+2025-06-30 13:23:26,058 - data_task - WARNING -   - sdk: unexpected indent (fetch_sdk_update.py, line 361)
+2025-06-30 13:23:26,058 - data_task - WARNING -   - tutorials: No module named 'nbformat'
+2025-06-30 13:25:11,193 - data_task - INFO - 未指定任务，将执行所有可用任务
+2025-06-30 13:25:11,194 - data_task - INFO - 准备执行任务: airdrops, wallets, rankings, headlines, strategies, sdk, tutorials
+2025-06-30 13:25:11,194 - data_task - INFO - 顺序执行任务
+2025-06-30 13:25:11,194 - data_task - INFO - 开始执行任务: airdrops
+2025-06-30 13:25:31,670 - data_task - INFO - Starting airdrop data collection process
+2025-06-30 13:25:31,670 - data_task - INFO - Fetching airdrop projects...
+2025-06-30 13:25:31,670 - data_task - INFO - Enriching data for 5 projects...
+2025-06-30 13:26:08,542 - data_task - INFO - Generating airdrop calendar...
+2025-06-30 13:26:08,546 - data_task - INFO - Generating markdown report...
+2025-06-30 13:26:08,548 - data_task.utils - INFO - Saved markdown to content/airdrops/index.md
+2025-06-30 13:26:08,549 - data_task.utils - INFO - Saved JSON data to data/airdrops/projects.json
+2025-06-30 13:26:08,550 - data_task.utils - INFO - Saved JSON data to data/airdrops/calendar.json
+2025-06-30 13:26:08,550 - data_task - INFO - Airdrop data processing complete! Processed 5 projects
+2025-06-30 13:26:08,551 - data_task.utils - INFO - Saved JSON data to data/airdrops/stats.json
+2025-06-30 13:26:08,551 - data_task - INFO - Statistics: {'total_projects': 5, 'projects_with_twitter': 5, 'projects_with_zealy': 5, 'projects_with_galxe': 0, 'last_updated': '2025-06-30T13:26:08.550681'}
+2025-06-30 13:26:08,552 - data_task - INFO - 任务 airdrops 执行成功，耗时 57.4 秒
+2025-06-30 13:26:08,552 - data_task - INFO - 开始执行任务: wallets
+2025-06-30 13:26:08,563 - data_task - INFO - Starting whale wallet tracking process
+2025-06-30 13:26:08,563 - data_task - INFO - Processing wallet 0x742d35Cc6634C0532925a3b844Bc454e4438f44e...
+2025-06-30 13:26:09,475 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0x742d35Cc6634C0532925a3b844Bc454e4438f44e&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:26:09,476 - data_task - ERROR - Failed to fetch token data for 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+2025-06-30 13:26:09,476 - data_task - WARNING - No data fetched for 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+2025-06-30 13:26:09,476 - data_task - INFO - Processing wallet 0x28c6c06298d514db089934071355e5743bf21d60...
+2025-06-30 13:26:10,252 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0x28c6c06298d514db089934071355e5743bf21d60&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:26:10,253 - data_task - ERROR - Failed to fetch token data for 0x28c6c06298d514db089934071355e5743bf21d60
+2025-06-30 13:26:10,254 - data_task - WARNING - No data fetched for 0x28c6c06298d514db089934071355e5743bf21d60
+2025-06-30 13:26:10,254 - data_task - INFO - Processing wallet 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8...
+2025-06-30 13:26:11,113 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0xbe0eb53f46cd790cd13851d5eff43d12404d33e8&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:26:11,113 - data_task - ERROR - Failed to fetch token data for 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8
+2025-06-30 13:26:11,114 - data_task - WARNING - No data fetched for 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8
+2025-06-30 13:26:11,114 - data_task - INFO - Wallet tracking complete. Success: 0, Failed: 3
+2025-06-30 13:26:11,114 - data_task - WARNING - Failed addresses: ['0x742d35Cc6634C0532925a3b844Bc454e4438f44e', '0x28c6c06298d514db089934071355e5743bf21d60', '0xbe0eb53f46cd790cd13851d5eff43d12404d33e8']
+2025-06-30 13:26:11,114 - data_task - INFO - 任务 wallets 执行成功，耗时 2.6 秒
+2025-06-30 13:26:11,114 - data_task - INFO - 开始执行任务: rankings
+2025-06-30 13:26:11,128 - data_task - ERROR - 任务 rankings 执行失败: expected 'except' or 'finally' block (update_tool_rankings.py, line 469)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 63, in run_tool_ranking_tasks
+    from update_tool_rankings import main as update_rankings
+  File "/Users/admin/workspace/BiTalk/data_task/update_tool_rankings.py", line 469
+    historical_data_path = os.path.join(data_dir, "historical_rankings.json")
+    ^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-06-30 13:26:11,132 - data_task - INFO - 开始执行任务: headlines
+2025-06-30 13:26:12,479 - data_task - INFO - Starting daily headlines generation process
+2025-06-30 13:26:12,479 - data_task - INFO - Fetching latest crypto news...
+2025-06-30 13:26:12,479 - data_task - INFO - Fetching trending topics...
+2025-06-30 13:26:12,479 - data_task - INFO - Extracting keywords...
+2025-06-30 13:26:12,480 - data_task - INFO - Generating news summary...
+2025-06-30 13:26:12,480 - data_task - ERROR - Error generating summary with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:26:12,480 - data_task - INFO - Generating content scripts...
+2025-06-30 13:26:12,480 - data_task - INFO - Generating script for Bitcoin ETF...
+2025-06-30 13:26:12,480 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:26:13,482 - data_task - INFO - Generating script for Ethereum Layer 2...
+2025-06-30 13:26:13,484 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:26:14,487 - data_task - INFO - Generating script for DeFi Yield Farming...
+2025-06-30 13:26:14,488 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:26:15,493 - data_task - INFO - Generating markdown report...
+2025-06-30 13:26:15,495 - data_task.utils - INFO - Saved markdown to content/daily/2025-06-30.md
+2025-06-30 13:26:15,495 - data_task.utils - INFO - Saved markdown to content/daily/index.md
+2025-06-30 13:26:15,496 - data_task.utils - INFO - Saved JSON data to data/daily/2025-06-30_data.json
+2025-06-30 13:26:15,496 - data_task - INFO - Daily headlines report generated for 2025-06-30
+2025-06-30 13:26:15,496 - data_task - INFO - 任务 headlines 执行成功，耗时 4.4 秒
+2025-06-30 13:26:15,496 - data_task - INFO - 开始执行任务: strategies
+2025-06-30 13:26:15,501 - data_task - ERROR - 任务 strategies 执行失败: expected 'except' or 'finally' block (generate_strategy_md.py, line 246)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 73, in run_strategy_tasks
+    from generate_strategy_md import main as gen_strategies
+  File "/Users/admin/workspace/BiTalk/data_task/generate_strategy_md.py", line 246
+    strategies = []
+    ^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-06-30 13:26:15,501 - data_task - INFO - 开始执行任务: sdk
+2025-06-30 13:26:15,507 - data_task - ERROR - 任务 sdk 执行失败: unexpected indent (fetch_sdk_update.py, line 361)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 78, in run_sdk_update_tasks
+    from fetch_sdk_update import main as fetch_sdk_updates
+  File "/Users/admin/workspace/BiTalk/data_task/fetch_sdk_update.py", line 361
+    serializable_data = []
+IndentationError: unexpected indent
+2025-06-30 13:26:15,507 - data_task - INFO - 开始执行任务: tutorials
+2025-06-30 13:26:15,927 - data_task - ERROR - 任务 tutorials 执行失败: No module named 'nbconvert'
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 83, in run_tutorial_tasks
+    from build_tutorial_index import main as build_tutorials
+  File "/Users/admin/workspace/BiTalk/data_task/build_tutorial_index.py", line 6, in <module>
+    from nbconvert import MarkdownExporter
+ModuleNotFoundError: No module named 'nbconvert'
+2025-06-30 13:26:15,928 - data_task.utils - INFO - Saved JSON data to logs/execution_report.json
+2025-06-30 13:26:15,928 - data_task - INFO - 执行报告已保存到: logs/execution_report.json
+2025-06-30 13:26:15,928 - data_task - INFO - 任务摘要: 总计 7, 成功 3, 失败 4
+2025-06-30 13:26:15,928 - data_task - WARNING - 失败的任务:
+2025-06-30 13:26:15,928 - data_task - WARNING -   - rankings: expected 'except' or 'finally' block (update_tool_rankings.py, line 469)
+2025-06-30 13:26:15,928 - data_task - WARNING -   - strategies: expected 'except' or 'finally' block (generate_strategy_md.py, line 246)
+2025-06-30 13:26:15,928 - data_task - WARNING -   - sdk: unexpected indent (fetch_sdk_update.py, line 361)
+2025-06-30 13:26:15,928 - data_task - WARNING -   - tutorials: No module named 'nbconvert'
+2025-06-30 13:28:19,627 - data_task - INFO - 未指定任务，将执行所有可用任务
+2025-06-30 13:28:19,628 - data_task - INFO - 准备执行任务: airdrops, wallets, rankings, headlines, strategies, sdk, tutorials
+2025-06-30 13:28:19,628 - data_task - INFO - 顺序执行任务
+2025-06-30 13:28:19,628 - data_task - INFO - 开始执行任务: airdrops
+2025-06-30 13:28:29,142 - data_task - INFO - Starting airdrop data collection process
+2025-06-30 13:28:29,142 - data_task - INFO - Fetching airdrop projects...
+2025-06-30 13:28:29,142 - data_task - INFO - Enriching data for 5 projects...
+2025-06-30 13:29:02,626 - data_task - INFO - Generating airdrop calendar...
+2025-06-30 13:29:02,639 - data_task - INFO - Generating markdown report...
+2025-06-30 13:29:02,640 - data_task.utils - INFO - Saved markdown to content/airdrops/index.md
+2025-06-30 13:29:02,640 - data_task.utils - INFO - Saved JSON data to data/airdrops/projects.json
+2025-06-30 13:29:02,641 - data_task.utils - INFO - Saved JSON data to data/airdrops/calendar.json
+2025-06-30 13:29:02,641 - data_task - INFO - Airdrop data processing complete! Processed 5 projects
+2025-06-30 13:29:02,641 - data_task.utils - INFO - Saved JSON data to data/airdrops/stats.json
+2025-06-30 13:29:02,641 - data_task - INFO - Statistics: {'total_projects': 5, 'projects_with_twitter': 5, 'projects_with_zealy': 5, 'projects_with_galxe': 0, 'last_updated': '2025-06-30T13:29:02.641213'}
+2025-06-30 13:29:02,641 - data_task - INFO - 任务 airdrops 执行成功，耗时 43.0 秒
+2025-06-30 13:29:02,642 - data_task - INFO - 开始执行任务: wallets
+2025-06-30 13:29:02,642 - data_task - INFO - Starting whale wallet tracking process
+2025-06-30 13:29:02,643 - data_task - INFO - Processing wallet 0x742d35Cc6634C0532925a3b844Bc454e4438f44e...
+2025-06-30 13:29:03,576 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0x742d35Cc6634C0532925a3b844Bc454e4438f44e&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:29:03,577 - data_task - ERROR - Failed to fetch token data for 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+2025-06-30 13:29:03,577 - data_task - WARNING - No data fetched for 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+2025-06-30 13:29:03,577 - data_task - INFO - Processing wallet 0x28c6c06298d514db089934071355e5743bf21d60...
+2025-06-30 13:29:04,520 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0x28c6c06298d514db089934071355e5743bf21d60&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:29:04,520 - data_task - ERROR - Failed to fetch token data for 0x28c6c06298d514db089934071355e5743bf21d60
+2025-06-30 13:29:04,520 - data_task - WARNING - No data fetched for 0x28c6c06298d514db089934071355e5743bf21d60
+2025-06-30 13:29:04,521 - data_task - INFO - Processing wallet 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8...
+2025-06-30 13:29:05,285 - data_task.utils - ERROR - Request failed for https://openapi.debank.com/v1/user/token_list: HTTPSConnectionPool(host='openapi.debank.com', port=443): Max retries exceeded with url: /v1/user/token_list?id=0xbe0eb53f46cd790cd13851d5eff43d12404d33e8&is_all=true (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)')))
+2025-06-30 13:29:05,286 - data_task - ERROR - Failed to fetch token data for 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8
+2025-06-30 13:29:05,286 - data_task - WARNING - No data fetched for 0xbe0eb53f46cd790cd13851d5eff43d12404d33e8
+2025-06-30 13:29:05,287 - data_task - INFO - Wallet tracking complete. Success: 0, Failed: 3
+2025-06-30 13:29:05,290 - data_task - WARNING - Failed addresses: ['0x742d35Cc6634C0532925a3b844Bc454e4438f44e', '0x28c6c06298d514db089934071355e5743bf21d60', '0xbe0eb53f46cd790cd13851d5eff43d12404d33e8']
+2025-06-30 13:29:05,290 - data_task - INFO - 任务 wallets 执行成功，耗时 2.6 秒
+2025-06-30 13:29:05,291 - data_task - INFO - 开始执行任务: rankings
+2025-06-30 13:29:05,306 - data_task - ERROR - 任务 rankings 执行失败: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 63, in run_tool_ranking_tasks
+    from update_tool_rankings import main as update_rankings
+  File "/Users/admin/workspace/BiTalk/data_task/update_tool_rankings.py", line 7, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+2025-06-30 13:29:05,311 - data_task - INFO - 开始执行任务: headlines
+2025-06-30 13:29:06,335 - data_task - INFO - Starting daily headlines generation process
+2025-06-30 13:29:06,335 - data_task - INFO - Fetching latest crypto news...
+2025-06-30 13:29:06,335 - data_task - INFO - Fetching trending topics...
+2025-06-30 13:29:06,335 - data_task - INFO - Extracting keywords...
+2025-06-30 13:29:06,335 - data_task - INFO - Generating news summary...
+2025-06-30 13:29:06,335 - data_task - ERROR - Error generating summary with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:29:06,335 - data_task - INFO - Generating content scripts...
+2025-06-30 13:29:06,335 - data_task - INFO - Generating script for Bitcoin ETF...
+2025-06-30 13:29:06,336 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:29:07,341 - data_task - INFO - Generating script for Ethereum Layer 2...
+2025-06-30 13:29:07,342 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:29:08,346 - data_task - INFO - Generating script for DeFi Yield Farming...
+2025-06-30 13:29:08,347 - data_task - ERROR - Error generating script with ChatGPT: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-30 13:29:09,351 - data_task - INFO - Generating markdown report...
+2025-06-30 13:29:09,354 - data_task.utils - INFO - Saved markdown to content/daily/2025-06-30.md
+2025-06-30 13:29:09,355 - data_task.utils - INFO - Saved markdown to content/daily/index.md
+2025-06-30 13:29:09,356 - data_task.utils - INFO - Saved JSON data to data/daily/2025-06-30_data.json
+2025-06-30 13:29:09,356 - data_task - INFO - Daily headlines report generated for 2025-06-30
+2025-06-30 13:29:09,357 - data_task - INFO - 任务 headlines 执行成功，耗时 4.0 秒
+2025-06-30 13:29:09,357 - data_task - INFO - 开始执行任务: strategies
+2025-06-30 13:29:09,360 - data_task - ERROR - 任务 strategies 执行失败: expected 'except' or 'finally' block (generate_strategy_md.py, line 250)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 73, in run_strategy_tasks
+    from generate_strategy_md import main as gen_strategies
+  File "/Users/admin/workspace/BiTalk/data_task/generate_strategy_md.py", line 250
+    dates = pd.date_range(start='2022-01-01', end='2023-01-01')
+    ^^^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-06-30 13:29:09,361 - data_task - INFO - 开始执行任务: sdk
+2025-06-30 13:29:09,365 - data_task - ERROR - 任务 sdk 执行失败: unexpected indent (fetch_sdk_update.py, line 371)
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 78, in run_sdk_update_tasks
+    from fetch_sdk_update import main as fetch_sdk_updates
+  File "/Users/admin/workspace/BiTalk/data_task/fetch_sdk_update.py", line 371
+    serializable_data.append(serializable_sdk)
+IndentationError: unexpected indent
+2025-06-30 13:29:09,365 - data_task - INFO - 开始执行任务: tutorials
+2025-06-30 13:29:11,718 - data_task - ERROR - 任务 tutorials 执行失败: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 27, in run_task
+    task_function()
+    ~~~~~~~~~~~~~^^
+  File "/Users/admin/workspace/BiTalk/data_task/run_all_tasks.py", line 83, in run_tutorial_tasks
+    from build_tutorial_index import main as build_tutorials
+  File "/Users/admin/workspace/BiTalk/data_task/build_tutorial_index.py", line 8, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+2025-06-30 13:29:11,719 - data_task.utils - INFO - Saved JSON data to logs/execution_report.json
+2025-06-30 13:29:11,720 - data_task - INFO - 执行报告已保存到: logs/execution_report.json
+2025-06-30 13:29:11,720 - data_task - INFO - 任务摘要: 总计 7, 成功 3, 失败 4
+2025-06-30 13:29:11,720 - data_task - WARNING - 失败的任务:
+2025-06-30 13:29:11,720 - data_task - WARNING -   - rankings: No module named 'matplotlib'
+2025-06-30 13:29:11,720 - data_task - WARNING -   - strategies: expected 'except' or 'finally' block (generate_strategy_md.py, line 250)
+2025-06-30 13:29:11,720 - data_task - WARNING -   - sdk: unexpected indent (fetch_sdk_update.py, line 371)
+2025-06-30 13:29:11,720 - data_task - WARNING -   - tutorials: No module named 'yaml'

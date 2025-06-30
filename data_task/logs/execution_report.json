@@ -1,0 +1,57 @@
+{
+  "execution_time": "2025-06-30T13:49:19.335455",
+  "total_tasks": 7,
+  "successful_tasks": 4,
+  "failed_tasks": 3,
+  "results": [
+    {
+      "task": "airdrops",
+      "status": "success",
+      "duration": 37.07656,
+      "start_time": "2025-06-30T13:48:32.648765",
+      "end_time": "2025-06-30T13:49:09.725325"
+    },
+    {
+      "task": "wallets",
+      "status": "success",
+      "duration": 2.273587,
+      "start_time": "2025-06-30T13:49:09.725924",
+      "end_time": "2025-06-30T13:49:11.999511"
+    },
+    {
+      "task": "rankings",
+      "status": "failed",
+      "error": "No module named 'seaborn'",
+      "start_time": "2025-06-30T13:49:11.999946",
+      "end_time": "2025-06-30T13:49:12.316395"
+    },
+    {
+      "task": "headlines",
+      "status": "success",
+      "duration": 4.454328,
+      "start_time": "2025-06-30T13:49:12.316446",
+      "end_time": "2025-06-30T13:49:16.770774"
+    },
+    {
+      "task": "strategies",
+      "status": "failed",
+      "error": "expected 'except' or 'finally' block (generate_strategy_md.py, line 270)",
+      "start_time": "2025-06-30T13:49:16.770869",
+      "end_time": "2025-06-30T13:49:16.776238"
+    },
+    {
+      "task": "sdk",
+      "status": "failed",
+      "error": "No module named 'markdown'",
+      "start_time": "2025-06-30T13:49:16.776291",
+      "end_time": "2025-06-30T13:49:16.779471"
+    },
+    {
+      "task": "tutorials",
+      "status": "success",
+      "duration": 2.555856,
+      "start_time": "2025-06-30T13:49:16.779551",
+      "end_time": "2025-06-30T13:49:19.335407"
+    }
+  ]
+}
